@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Genshin Impact daily and weekly routine: an interactive checklist with saved progress and Battle Pass goals.">
+    <title>Daily routine · Manual del AR Chikito</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+
+    <script src="../js/storage.js"></script>
+    <script src="../js/language.js"></script>
+</head>
+<body data-root="../" data-page="rutina"
+      data-title-en="Daily routine · Manual del AR Chikito"
+      data-title-es="Rutina diaria · Manual del AR Chikito">
+    <a class="skip-link" href="#contenido"><span lang="en">Skip to content</span><span lang="es">Saltar al contenido</span></a>
+    <header id="site-header" class="site-header"></header>
+
+    <main id="contenido">
+        <section class="page-hero" aria-labelledby="page-title">
+            <div class="page-hero__inner page-hero__inner--single container">
+                <div class="page-hero__content">
+                    <span class="page-hero__eyebrow"><span lang="en">Section 05 · Daily and weekly routine</span><span lang="es">Sección 05 · Rutina diaria y semanal</span></span>
+                    <h1 id="page-title" class="page-hero__title">
+                        <span lang="en">Fifteen minutes a day and your account will thank you</span>
+                        <span lang="es">Quince minutos al día y tu cuenta te lo agradece</span>
+                    </h1>
+                    <p class="page-hero__lead">
+                        <span lang="en">The bare minimum so your account doesn't fall behind. Haven't logged in for days? Oh well, it happened. Okay, let's start today: check off what you do and I'll keep count.</span>
+                        <span lang="es">Lo mínimo para que tu cuenta no se quede atrás. ¿Llevas días sin entrar? Ni modo, ya pasó. A ver, empezamos hoy: ve marcando lo que hagas y yo llevo la cuenta.</span>
+                    </p>
+                    <div class="page-hero__meta">
+                        <span class="meta-badge" data-last-update></span>
+                        <button id="mark-read-button" class="button button--ghost button--small" type="button" aria-pressed="false"></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <nav class="page-toc" aria-label="On this page" data-aria-label-en="On this page" data-aria-label-es="En esta página">
+            <div class="container">
+                <ul class="page-toc__list">
+                    <li><a class="page-toc__link" href="#checklist-diaria"><span lang="en">Daily checklist</span><span lang="es">Checklist diaria</span></a></li>
+                    <li><a class="page-toc__link" href="#checklist-semanal"><span lang="en">Weekly goals</span><span lang="es">Objetivos semanales</span></a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <section class="section" aria-labelledby="page-title">
+            <div class="container">
+                <div class="grid grid--2">
+
+                    <!-- Checklist diaria -->
+                    <article id="checklist-diaria" class="tool-card">
+                        <div class="checklist-card__header">
+                            <div class="tool-card__header">
+                                <img src="../assets/icons/items/protogema.webp" alt="">
+                                <div>
+                                    <h2 class="tool-card__title"><span lang="en">Daily routine</span><span lang="es">Rutina diaria</span></h2>
+                                    <p class="tool-card__subtitle"><span lang="en">For when you're short on time.</span><span lang="es">Para cuando tienes poco tiempo.</span></p>
+                                </div>
+                            </div>
+                            <span id="daily-counter" class="checklist-card__counter" aria-live="polite">0/6</span>
+                        </div>
+                        <div class="progress" role="presentation">
+                            <div id="daily-progress-bar" class="progress__bar"></div>
+                        </div>
+
+                        <!-- Las tareas se escriben aquí; js/checklist.js guarda cuáles están hechas -->
+                        <ul id="daily-checklist" class="checklist">
+                            <li class="checklist__item">
+                                <label>
+                                    <input class="checklist__checkbox" type="checkbox" value="commissions">
+                                    <span class="checklist__text">
+                                        <span lang="en">Claim commission or Encounter Points rewards</span>
+                                        <span lang="es">Cobrar recompensas de comisiones o puntos de encuentro</span>
+                                        <span class="checklist__hint">
+                                            <span lang="en">The extra reward is claimed with Katheryne at the Adventurers' Guild.</span>
+                                            <span lang="es">La recompensa extra se cobra con Katheryne, en el Gremio de Aventureros.</span>
+                                        </span>
+                                    </span>
+                                </label>
+                            </li>
+                            <li class="checklist__item">
+                                <label>
+                                    <input class="checklist__checkbox" type="checkbox" value="resin">
+                                    <span class="checklist__text">
+                                        <span lang="en">Spend the resin you have available</span>
+                                        <span lang="es">Gastar la resina que tengas disponible</span>
+                                        <span class="checklist__hint">
+                                            <span lang="en">Full resin is wasted resin, I told you.</span>
+                                            <span lang="es">Resina llena es resina desperdiciada, te lo dije.</span>
+                                        </span>
+                                    </span>
+                                </label>
+                            </li>
+                            <li class="checklist__item">
+                                <label>
+                                    <input class="checklist__checkbox" type="checkbox" value="collect-expeditions">
+                                    <span class="checklist__text">
+                                        <span lang="en">Collect your expeditions</span>
+                                        <span lang="es">Cobrar las expediciones</span>
+                                        <span class="checklist__hint">
+                                            <span lang="en">Trick: always send at least 2 characters to mine ores; collecting them completes the daily goal.</span>
+                                            <span lang="es">Truco: pon siempre al menos 2 personajes a buscar minerales; al cobrarlos cumples el objetivo diario.</span>
+                                        </span>
+                                    </span>
+                                </label>
+                            </li>
+                            <li class="checklist__item">
+                                <label>
+                                    <input class="checklist__checkbox" type="checkbox" value="send-expeditions">
+                                    <span class="checklist__text">
+                                        <span lang="en">Send characters out on expeditions again</span>
+                                        <span lang="es">Enviar nuevamente personajes a expediciones</span>
+                                        <span class="checklist__hint">
+                                            <span lang="en">If you forget, there'll be nothing to collect tomorrow. Oh well.</span>
+                                            <span lang="es">Si se te olvida, mañana no hay nada que cobrar. Ni modo.</span>
+                                        </span>
+                                    </span>
+                                </label>
+                            </li>
+                            <li class="checklist__item">
+                                <label>
+                                    <input class="checklist__checkbox" type="checkbox" value="events">
+                                    <span class="checklist__text">
+                                        <span lang="en">Check limited-time events</span>
+                                        <span lang="es">Revisar eventos temporales</span>
+                                        <span class="checklist__hint">
+                                            <span lang="en">They give Primogems, and once they end they don't come back.</span>
+                                            <span lang="es">Dan Protogemas y cuando terminan no vuelven.</span>
+                                        </span>
+                                    </span>
+                                </label>
+                            </li>
+                            <li class="checklist__item">
+                                <label>
+                                    <input class="checklist__checkbox" type="checkbox" value="battle-pass-daily">
+                                    <span class="checklist__text">
+                                        <span lang="en">Check the Battle Pass daily goals</span>
+                                        <span lang="es">Revisar los objetivos diarios del Pase de Batalla</span>
+                                        <span class="checklist__hint">
+                                            <span lang="en">Many of them get done with the tasks above.</span>
+                                            <span lang="es">Muchos se cumplen solos con las tareas anteriores.</span>
+                                        </span>
+                                    </span>
+                                </label>
+                            </li>
+                        </ul>
+
+                        <p id="daily-done-message" class="checklist-card__done-message" hidden>
+                            <span lang="en">Done! See, it wasn't that much. Now go explore with a clear conscience.</span>
+                            <span lang="es">¡Listo! ¿Ves que no era tanto? Ahora sí, a explorar con la conciencia tranquila.</span>
+                        </p>
+                        <p id="daily-reset-info" class="checklist-card__reset-info"></p>
+                        <button id="daily-reset-button" class="button button--small button--danger" type="button"><span lang="en">Reset checklist</span><span lang="es">Reiniciar checklist</span></button>
+                    </article>
+
+                    <!-- Checklist semanal -->
+                    <article id="checklist-semanal" class="tool-card">
+                        <div class="checklist-card__header">
+                            <div class="tool-card__header">
+                                <img src="../assets/icons/items/mineral-mistico.webp" alt="">
+                                <div>
+                                    <h2 class="tool-card__title"><span lang="en">Weekly goals</span><span lang="es">Objetivos semanales</span></h2>
+                                    <p class="tool-card__subtitle"><span lang="en">Battle Pass and weekly bosses.</span><span lang="es">Pase de Batalla y jefes de la semana.</span></p>
+                                </div>
+                            </div>
+                            <span id="weekly-counter" class="checklist-card__counter" aria-live="polite">0/5</span>
+                        </div>
+                        <div class="progress" role="presentation">
+                            <div id="weekly-progress-bar" class="progress__bar"></div>
+                        </div>
+
+                        <ul id="weekly-checklist" class="checklist">
+                            <li class="checklist__item">
+                                <label>
+                                    <input class="checklist__checkbox" type="checkbox" value="cook">
+                                    <span class="checklist__text">
+                                        <span lang="en">Cook 20 dishes</span>
+                                        <span lang="es">Cocinar 20 platos</span>
+                                        <span class="checklist__hint">
+                                            <span lang="en">While you're at it, make some healing food for the bosses.</span>
+                                            <span lang="es">Aprovecha y prepara comida para curarte en los jefes.</span>
+                                        </span>
+                                    </span>
+                                </label>
+                            </li>
+                            <li class="checklist__item">
+                                <label>
+                                    <input class="checklist__checkbox" type="checkbox" value="forge">
+                                    <span class="checklist__text">
+                                        <span lang="en">Forge 20 items</span>
+                                        <span lang="es">Forjar 20 objetos</span>
+                                        <span class="checklist__hint">
+                                            <span lang="en">Forging enhancement ore counts, and it's useful too.</span>
+                                            <span lang="es">Forjar mineral de refinamiento cuenta y además te sirve.</span>
+                                        </span>
+                                    </span>
+                                </label>
+                            </li>
+                            <li class="checklist__item">
+                                <label>
+                                    <input class="checklist__checkbox" type="checkbox" value="bosses-domains">
+                                    <span class="checklist__text">
+                                        <span lang="en">Complete the weekly boss and domain goals</span>
+                                        <span lang="es">Completar los objetivos semanales de jefes y dominios</span>
+                                        <span class="checklist__hint">
+                                            <span lang="en">The first 3 weekly boss rewards cost half the resin.</span>
+                                            <span lang="es">Las 3 primeras recompensas de jefes semanales cuestan la mitad de resina.</span>
+                                        </span>
+                                    </span>
+                                </label>
+                            </li>
+                            <li class="checklist__item">
+                                <label>
+                                    <input class="checklist__checkbox" type="checkbox" value="battle-pass-exp">
+                                    <span class="checklist__text">
+                                        <span lang="en">Complete commissions and activities that give Battle Pass EXP</span>
+                                        <span lang="es">Completar encargos y actividades que suman experiencia del pase</span>
+                                        <span class="checklist__hint">
+                                            <span lang="en">Check the Battle Pass missions tab.</span>
+                                            <span lang="es">Revisa la pestaña de misiones del Pase de Batalla.</span>
+                                        </span>
+                                    </span>
+                                </label>
+                            </li>
+                            <li class="checklist__item">
+                                <label>
+                                    <input class="checklist__checkbox" type="checkbox" value="reputation">
+                                    <span class="checklist__text">
+                                        <span lang="en">Check the weekly reputation goals and other available activities</span>
+                                        <span lang="es">Revisar los objetivos semanales de reputación y otras actividades disponibles</span>
+                                        <span class="checklist__hint">
+                                            <span lang="en">Each region's reputation gives blueprints, rewards and useful upgrades.</span>
+                                            <span lang="es">La reputación de cada región da planos, recompensas y mejoras útiles.</span>
+                                        </span>
+                                    </span>
+                                </label>
+                            </li>
+                        </ul>
+
+                        <p id="weekly-done-message" class="checklist-card__done-message" hidden>
+                            <span lang="en">Week complete! You earned it: take a break (or a wish).</span>
+                            <span lang="es">¡Semana cumplida! Te lo ganaste: date un descanso (o un deseo).</span>
+                        </p>
+                        <p id="weekly-reset-info" class="checklist-card__reset-info"></p>
+                        <button id="weekly-reset-button" class="button button--small button--danger" type="button"><span lang="en">Reset checklist</span><span lang="es">Reiniciar checklist</span></button>
+                    </article>
+                </div>
+
+                <div class="callout callout--note">
+                    <strong class="callout__title"><span lang="en">About the reset</span><span lang="es">Sobre el reinicio</span></strong>
+                    <p>
+                        <span lang="en">The game resets daily activities at 4:00 (server time) and weekly ones on Mondays at the same time. These lists reset themselves at 4:00 <strong>your</strong> local time, so there may be a small difference depending on your server. Your progress is saved in this browser.</span>
+                        <span lang="es">El juego reinicia las actividades diarias a las 4:00 (hora del servidor) y las semanales los lunes a esa misma hora. Estas listas se reinician solas a las 4:00 de <strong>tu</strong> hora local, así que puede haber una pequeña diferencia según tu servidor. Tu progreso se guarda en este navegador.</span>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <nav id="section-pagination" class="section-pagination container" aria-label="Sections" data-aria-label-en="Section navigation" data-aria-label-es="Navegación entre secciones"></nav>
+    </main>
+
+    <footer id="site-footer" class="site-footer"></footer>
+
+    <script src="../data/site-content.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/checklist.js"></script>
+</body>
+</html>

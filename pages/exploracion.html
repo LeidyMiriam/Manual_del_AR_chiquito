@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Smart exploration in Genshin Impact: how to use the interactive map, find local specialties and build gathering routes.">
+    <title>Exploration · Manual del AR Chikito</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+
+    <script src="../js/storage.js"></script>
+    <script src="../js/language.js"></script>
+</head>
+<body data-root="../" data-page="exploracion"
+      data-title-en="Exploration · Manual del AR Chikito"
+      data-title-es="Exploración · Manual del AR Chikito">
+    <a class="skip-link" href="#contenido"><span lang="en">Skip to content</span><span lang="es">Saltar al contenido</span></a>
+    <header id="site-header" class="site-header"></header>
+
+    <main id="contenido">
+        <section class="page-hero" aria-labelledby="page-title">
+            <div class="page-hero__inner page-hero__inner--single container">
+                <div class="page-hero__content">
+                    <span class="page-hero__eyebrow"><span lang="en">Section 06 · Smart exploration</span><span lang="es">Sección 06 · Exploración inteligente</span></span>
+                    <h1 id="page-title" class="page-hero__title">
+                        <span lang="en">The interactive map exists for a reason</span>
+                        <span lang="es">El mapa interactivo existe por una razón</span>
+                    </h1>
+                    <p class="page-hero__lead">
+                        <span lang="en">Leveling a character to 90 takes 168 local specialties. Have you been searching for them blindly? You screwed up, but oh well. Okay, I'll teach you how to use the map and you'll be done in twenty minutes.</span>
+                        <span lang="es">Subir a un personaje a nivel 90 pide 168 especialidades locales. ¿Las estuviste buscando a ciegas? Ya la cagaste, pero ni modo. A ver, te enseño a usar el mapa y terminas en veinte minutos.</span>
+                    </p>
+                    <div class="page-hero__meta">
+                        <span class="meta-badge" data-last-update></span>
+                        <button id="mark-read-button" class="button button--ghost button--small" type="button" aria-pressed="false"></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <nav class="page-toc" aria-label="On this page" data-aria-label-en="On this page" data-aria-label-es="En esta página">
+            <div class="container">
+                <ul class="page-toc__list">
+                    <li><a class="page-toc__link" href="#mapa"><span lang="en">Interactive map</span><span lang="es">Mapa interactivo</span></a></li>
+                    <li><a class="page-toc__link" href="#como-usarlo"><span lang="en">How to use it</span><span lang="es">Cómo usarlo</span></a></li>
+                    <li><a class="page-toc__link" href="#consejos"><span lang="en">Exploration tips</span><span lang="es">Consejos para explorar</span></a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Mapa interactivo -->
+        <section id="mapa" class="section" aria-labelledby="map-title">
+            <div class="container">
+                <div class="map-cta">
+                    <div>
+                        <span class="page-hero__eyebrow"><span lang="en">The star of this section</span><span lang="es">La protagonista de esta sección</span></span>
+                        <h2 id="map-title" class="map-cta__title"><span lang="en">Teyvat interactive map</span><span lang="es">Mapa interactivo de Teyvat</span></h2>
+                        <p>
+                            <span lang="en">It's HoYoLAB's official map: it shows chests, local specialties, ores, enemies, bosses, puzzles and more, with filters to see only what you need. It works in your phone's or your computer's browser.</span>
+                            <span lang="es">Es el mapa oficial de HoYoLAB: muestra cofres, especialidades locales, minerales, enemigos, jefes, acertijos y más, con filtros para ver solo lo que necesitas. Funciona en el navegador del celular y de la computadora.</span>
+                        </p>
+                        <a class="button" href="https://act.hoyolab.com/ys/app/interactive-map/" target="_blank" rel="noopener"><span lang="en">Open the interactive map ↗</span><span lang="es">Abrir el mapa interactivo ↗</span></a>
+                    </div>
+                    <ul class="map-cta__legend" aria-label="What you can find" data-aria-label-en="What you can find" data-aria-label-es="Qué puedes encontrar">
+                        <li><span lang="en"><strong>Local specialties</strong> · to ascend characters.</span><span lang="es"><strong>Especialidades locales</strong> · para ascender personajes.</span></li>
+                        <li><span lang="en"><strong>Ores</strong> · to forge and upgrade weapons.</span><span lang="es"><strong>Minerales</strong> · para forjar y subir armas.</span></li>
+                        <li><span lang="en"><strong>Enemies and bosses</strong> · ascension and talent materials.</span><span lang="es"><strong>Enemigos y jefes</strong> · materiales de ascensión y talentos.</span></li>
+                        <li><span lang="en"><strong>Chests and oculi</strong> · Primogems and extra stamina.</span><span lang="es"><strong>Cofres y oculi</strong> · Protogemas y estamina extra.</span></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Cómo usarlo -->
+        <section id="como-usarlo" class="section section--alt" aria-labelledby="steps-title">
+            <div class="container">
+                <header class="section-header">
+                    <span class="section-header__eyebrow"><span lang="en">Step by step</span><span lang="es">Paso a paso</span></span>
+                    <h2 id="steps-title" class="section-header__title"><span lang="en">How to get the most out of the map</span><span lang="es">Cómo sacarle provecho al mapa</span></h2>
+                </header>
+                <ol class="steps">
+                    <li class="card step">
+                        <h3 class="card__title"><span lang="en">Find local specialties</span><span lang="es">Encuentra especialidades locales</span></h3>
+                        <p class="card__text">
+                            <span lang="en">In the filter panel, open the local specialties category and pick the one your ascension needs. You can also type its name in the panel's search bar.</span>
+                            <span lang="es">En el panel de filtros abre la categoría de especialidades locales y elige la que te pide la ascensión. También puedes escribir su nombre en el buscador del panel.</span>
+                        </p>
+                    </li>
+                    <li class="card step">
+                        <h3 class="card__title"><span lang="en">Filter only what you need</span><span lang="es">Filtra solo lo que necesitas</span></h3>
+                        <p class="card__text">
+                            <span lang="en">Turn on a few filters at a time. Seeing forty different icons is the fastest way to find nothing.</span>
+                            <span lang="es">Activa pocos filtros a la vez. Ver cuarenta íconos distintos es la forma más rápida de no encontrar nada.</span>
+                        </p>
+                    </li>
+                    <li class="card step">
+                        <h3 class="card__title"><span lang="en">Look for enemies and bosses</span><span lang="es">Busca enemigos y jefes</span></h3>
+                        <p class="card__text">
+                            <span lang="en">The enemy and boss categories show where they spawn, so you know where to go for ascension and talent materials.</span>
+                            <span lang="es">Las categorías de enemigos y jefes muestran dónde aparecen. Así sabes a dónde ir por los materiales de ascensión y de talentos.</span>
+                        </p>
+                    </li>
+                    <li class="card step">
+                        <h3 class="card__title"><span lang="en">Mark what you've already collected</span><span lang="es">Marca lo que ya recolectaste</span></h3>
+                        <p class="card__text">
+                            <span lang="en">Select a point and mark it as found. If you sign in to HoYoLAB, your marks are saved, and you can hide what you've already marked so you don't go back for the same thing.</span>
+                            <span lang="es">Selecciona un punto y márcalo como encontrado. Si inicias sesión en HoYoLAB tus marcas se guardan, y puedes ocultar lo ya marcado para no volver por lo mismo.</span>
+                        </p>
+                    </li>
+                    <li class="card step">
+                        <h3 class="card__title"><span lang="en">Build your gathering route</span><span lang="es">Arma tu ruta de recolección</span></h3>
+                        <p class="card__text">
+                            <span lang="en">Group nearby points around a teleport waypoint, go around them in a loop and finish near another waypoint.</span>
+                            <span lang="es">Agrupa los puntos cercanos a un teletransportador, recórrelos en círculo y termina cerca de otro teletransportador.</span>
+                        </p>
+                    </li>
+                    <li class="card step">
+                        <h3 class="card__title"><span lang="en">Come back in two days</span><span lang="es">Vuelve en dos días</span></h3>
+                        <p class="card__text">
+                            <span lang="en">Local specialties respawn 48 hours after you pick them. If you need a lot, repeat the route.</span>
+                            <span lang="es">Las especialidades locales reaparecen 48 horas después de recogerlas. Si necesitas muchas, repite la ruta.</span>
+                        </p>
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- Consejos -->
+        <section id="consejos" class="section" aria-labelledby="tips-title">
+            <div class="container">
+                <header class="section-header">
+                    <span class="section-header__eyebrow"><span lang="en">Lessons learned</span><span lang="es">Lecciones aprendidas</span></span>
+                    <h2 id="tips-title" class="section-header__title"><span lang="en">Tips for exploring without suffering</span><span lang="es">Consejos para explorar sin sufrir</span></h2>
+                </header>
+                <div class="grid grid--3">
+                    <article class="card">
+                        <h3 class="card__title"><span lang="en">Waypoints first</span><span lang="es">Teletransportadores primero</span></h3>
+                        <p class="card__text">
+                            <span lang="en">When you reach a new area, unlock all the teleport waypoints and statues. They'll save you hours of walking later.</span>
+                            <span lang="es">Al llegar a una zona nueva, activa todos los teletransportadores y estatuas. Te ahorran horas de caminata después.</span>
+                        </p>
+                    </article>
+                    <article class="card">
+                        <h3 class="card__title"><span lang="en">Oculi = more stamina</span><span lang="es">Oculi = más estamina</span></h3>
+                        <p class="card__text">
+                            <span lang="en">Each region's oculi are offered at the Statues of The Seven and increase your stamina. More stamina means more climbing and fewer falls.</span>
+                            <span lang="es">Los oculi de cada región se ofrecen en las Estatuas de los Siete y aumentan tu estamina. Más estamina, más escalada y menos caídas.</span>
+                        </p>
+                    </article>
+                    <article class="card">
+                        <h3 class="card__title"><span lang="en">Use the elements</span><span lang="es">Usa los elementos</span></h3>
+                        <p class="card__text">
+                            <span lang="en">Many puzzles are solved with the right element: Pyro for torches, Electro for mechanisms, Anemo for windmills.</span>
+                            <span lang="es">Muchos acertijos se resuelven con el elemento correcto: Pyro para antorchas, Electro para mecanismos, Anemo para molinos.</span>
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <nav id="section-pagination" class="section-pagination container" aria-label="Sections" data-aria-label-en="Section navigation" data-aria-label-es="Navegación entre secciones"></nav>
+    </main>
+
+    <footer id="site-footer" class="site-footer"></footer>
+
+    <script src="../data/site-content.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+</html>

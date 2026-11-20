@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Manual del AR Chikito: a survival guide for new Genshin Impact travelers, from AR 1 to AR 45.">
+    <title>Manual del AR Chikito · Teyvat survival guide</title>
+
+    <!-- Tipografías: Cinzel (títulos) y Nunito (texto) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+    <!-- Idioma: se aplica antes de dibujar la página para no mostrar los dos idiomas -->
+    <script src="js/storage.js"></script>
+    <script src="js/language.js"></script>
+</head>
+<body data-root="./" data-page="inicio"
+      data-title-en="Manual del AR Chikito · Teyvat survival guide"
+      data-title-es="Manual del AR Chikito · Guía de supervivencia de Teyvat">
+    <a class="skip-link" href="#contenido"><span lang="en">Skip to content</span><span lang="es">Saltar al contenido</span></a>
+
+    <!-- El encabezado y el menú los dibuja js/main.js -->
+    <header id="site-header" class="site-header"></header>
+
+    <main id="contenido">
+
+        <!-- Bienvenida -->
+        <section class="page-hero home-hero" aria-labelledby="home-title">
+            <div class="page-hero__inner container">
+                <div class="page-hero__content">
+                    <span class="page-hero__eyebrow">✦ Manual del AR Chikito · <span lang="en">Teyvat survival guide</span><span lang="es">Guía de supervivencia de Teyvat</span></span>
+                    <h1 id="home-title" class="page-hero__title home-hero__title">
+                        <span lang="en">Welcome to Teyvat, traveler!</span>
+                        <span lang="es">¡Bienvenido a Teyvat, viajero!</span>
+                    </h1>
+                    <p class="page-hero__lead">
+                        <span lang="en">Before you spend all your Primogems, we need to talk. Already spent them? Oh well, you screwed up. Okay, let me help.</span>
+                        <span lang="es">Antes de que gastes todas tus Protogemas, tenemos que hablar. ¿Ya te las gastaste? Ni modo, ya la cagaste. A ver, te ayudo.</span>
+                    </p>
+                    <p class="page-hero__lead">
+                        <span lang="en">I'm that friend who's been playing for years: I tell you what you're doing wrong, laugh a little, and then help you fix it. No jargon, no judging your favorite characters, and tools so you don't make the same mistakes we did.</span>
+                        <span lang="es">Soy esa amiga que lleva años jugando: te digo qué estás haciendo mal, me río tantito y luego te ayudo a arreglarlo. Sin tecnicismos, sin juzgar a tus personajes favoritos y con herramientas para que no cometas los mismos errores que nosotros.</span>
+                    </p>
+                    <div class="home-hero__actions">
+                        <a class="button" href="pages/primeros-pasos.html"><span lang="en">Start my adventure</span><span lang="es">Comenzar mi aventura</span></a>
+                        <a class="button button--ghost" href="pages/herramientas.html"><span lang="en">See the tools</span><span lang="es">Ver las herramientas</span></a>
+                    </div>
+                </div>
+                <figure class="page-hero__media home-hero__media">
+                    <img src="assets/images/hero-diario.webp"
+                         alt="Dark notebook with a golden Teyvat star on the cover, next to golden pencils"
+                         data-alt-en="Dark notebook with a golden Teyvat star on the cover, next to golden pencils"
+                         data-alt-es="Cuaderno de tapa oscura con una estrella dorada de Teyvat en la portada, junto a lápices dorados">
+                </figure>
+            </div>
+        </section>
+
+        <!-- Accesos rápidos -->
+        <section class="section section--compact" aria-labelledby="quick-title">
+            <div class="container">
+                <header class="section-header section-header--center">
+                    <h2 id="quick-title" class="section-header__title">
+                        <span lang="en">What do you need to learn today?</span>
+                        <span lang="es">¿Qué necesitas aprender hoy?</span>
+                    </h2>
+                </header>
+                <nav class="quick-links" aria-label="Quick links" data-aria-label-en="Quick links" data-aria-label-es="Accesos rápidos">
+                    <a class="quick-link" href="pages/equipos.html">
+                        <img src="assets/images/characters/bennett.webp" alt="">
+                        <span lang="en">Build my team</span><span lang="es">Armar mi equipo</span>
+                    </a>
+                    <a class="quick-link" href="pages/reacciones.html">
+                        <img src="assets/icons/elements/hydro.svg" alt="">
+                        <span lang="en">Understand reactions</span><span lang="es">Entender reacciones</span>
+                    </a>
+                    <a class="quick-link" href="pages/recursos.html">
+                        <img src="assets/icons/items/resina-original.webp" alt="">
+                        <span lang="en">Take care of my resources</span><span lang="es">Cuidar mis recursos</span>
+                    </a>
+                    <a class="quick-link" href="pages/rutina.html">
+                        <img src="assets/icons/items/protogema.webp" alt="">
+                        <span lang="en">My daily routine</span><span lang="es">Mi rutina diaria</span>
+                    </a>
+                </nav>
+            </div>
+        </section>
+
+        <!-- Consejo de la veterana -->
+        <section class="section section--compact" aria-labelledby="veteran-tip-title">
+            <div class="container">
+                <article class="veteran-tip">
+                    <img class="veteran-tip__avatar" src="assets/images/characters/paimon.webp" alt="Paimon">
+                    <div>
+                        <span class="veteran-tip__label"><span lang="en">Veteran's tip</span><span lang="es">Consejo de la veterana</span></span>
+                        <!-- El título y el texto los escribe js/home.js a partir de VETERAN_TIPS -->
+                        <h2 id="veteran-tip-title" class="veteran-tip__title"></h2>
+                        <p id="veteran-tip-text" class="veteran-tip__text"></p>
+                    </div>
+                    <button id="next-tip-button" class="button button--secondary" type="button"><span lang="en">Another tip</span><span lang="es">Otro consejo</span></button>
+                </article>
+            </div>
+        </section>
+
+        <!-- Secciones del manual y progreso de lectura -->
+        <section class="section section--alt" aria-labelledby="sections-title">
+            <div class="container">
+                <header class="section-header">
+                    <span class="section-header__eyebrow"><span lang="en">The full manual</span><span lang="es">El manual completo</span></span>
+                    <h2 id="sections-title" class="section-header__title"><span lang="en">Eight sections</span><span lang="es">Ocho secciones</span></h2>
+                    <p class="section-header__lead">
+                        <span lang="en">Read them in any order. When you finish one, mark it as read and I'll keep count here.</span>
+                        <span lang="es">Léelas en el orden que quieras. Cuando termines una, márcala como leída y aquí te llevo la cuenta.</span>
+                    </p>
+                </header>
+
+                <div class="reading-progress">
+                    <div class="progress__label">
+                        <span><span lang="en">Sections read</span><span lang="es">Secciones leídas</span></span>
+                        <span id="reading-progress-count">0/8</span>
+                    </div>
+                    <div class="progress" role="presentation">
+                        <div id="reading-progress-bar" class="progress__bar"></div>
+                    </div>
+                </div>
+
+                <!-- Las tarjetas las dibuja js/home.js a partir de SITE_SECTIONS -->
+                <div id="section-grid" class="section-grid"></div>
+            </div>
+        </section>
+
+        <!-- Sello de identidad -->
+        <section class="section" aria-labelledby="confessions-title">
+            <div class="container">
+                <header class="section-header">
+                    <span class="section-header__eyebrow"><span lang="en">Our signature</span><span lang="es">Sello de identidad</span></span>
+                    <h2 id="confessions-title" class="section-header__title"><span lang="en">Confessions of an AR 60</span><span lang="es">Confesiones de un AR 60</span></h2>
+                    <p class="section-header__lead"><span lang="en">Little lessons we learned the hard way.</span><span lang="es">Pequeñas lecciones que aprendimos a la mala.</span></p>
+                </header>
+
+                <ul class="confessions">
+                    <li class="confessions__item">
+                        <span lang="en">That character you abandoned at level 20 might actually be useful.</span>
+                        <span lang="es">Ese personaje que abandonaste en nivel 20 podría ser útil.</span>
+                    </li>
+                    <li class="confessions__item">
+                        <span lang="en">Not all your characters need perfect artifacts.</span>
+                        <span lang="es">No todos tus personajes necesitan artefactos perfectos.</span>
+                    </li>
+                    <li class="confessions__item">
+                        <span lang="en">Paimon is nice, her voice is just slightly irritating. Please don't eat the emergency food.</span>
+                        <span lang="es">Paimon es buena, solo tiene la voz ligeramente irritante. Por favor, no te comas a la comida de emergencia.</span>
+                    </li>
+                    <li class="confessions__item">
+                        <span lang="en">You don't need to max out every talent.</span>
+                        <span lang="es">No necesitas subir todos los talentos al máximo.</span>
+                    </li>
+                    <li class="confessions__item">
+                        <span lang="en">The interactive map exists for a reason.</span>
+                        <span lang="es">El mapa interactivo existe por una razón.</span>
+                    </li>
+                    <li class="confessions__item">
+                        <span lang="en">Never underestimate Noelle.</span>
+                        <span lang="es">Nunca subestimes a Noelle.</span>
+                    </li>
+                    <li class="confessions__item">
+                        <span lang="en">Save your Primogems for what you really want.</span>
+                        <span lang="es">Guarda tus Protogemas para lo que realmente quieres.</span>
+                    </li>
+                    <li class="confessions__item">
+                        <span lang="en">If you still don't get it, grab the one you like and stack full ATK on their artifacts. Not the smartest move, but it'll work for a while.</span>
+                        <span lang="es">Si aún no le sabes, agarra al que te gusta y ponle full ataque en los artefactos. No es lo más práctico, pero te funcionará por un tiempo.</span>
+                    </li>
+                    <li class="confessions__item confessions__item--soon">
+                        <span lang="en">More tips coming soon...</span>
+                        <span lang="es">Más consejos próximamente...</span>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Lema -->
+        <section class="section section--alt" aria-labelledby="motto-quote">
+            <blockquote class="motto">
+                <p id="motto-quote" class="motto__quote">
+                    <span lang="en">“You don't have to be the best traveler in Teyvat. You just have to stop making the same mistakes we did.”</span>
+                    <span lang="es">«No tienes que ser el mejor viajero de Teyvat. Solo tienes que dejar de cometer los mismos errores que nosotros».</span>
+                </p>
+                <p class="motto__caption">
+                    <span lang="en">That's the spirit of the Manual del AR Chikito 💚</span>
+                    <span lang="es">Ese es el espíritu del Manual del AR Chikito 💚</span>
+                </p>
+            </blockquote>
+        </section>
+    </main>
+
+    <!-- El pie de página lo dibuja js/main.js -->
+    <footer id="site-footer" class="site-footer"></footer>
+
+    <!-- Datos -->
+    <script src="data/site-content.js"></script>
+    <!-- Lógica -->
+    <script src="js/main.js"></script>
+    <script src="js/home.js"></script>
+</body>
+</html>

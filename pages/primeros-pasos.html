@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="First steps in Genshin Impact: AR, World Level, characters, weapons, artifacts, elements and resin explained without jargon.">
+    <title>First steps · Manual del AR Chikito</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+
+    <script src="../js/storage.js"></script>
+    <script src="../js/language.js"></script>
+</head>
+<body data-root="../" data-page="primeros-pasos"
+      data-title-en="First steps · Manual del AR Chikito"
+      data-title-es="Primeros pasos · Manual del AR Chikito">
+    <a class="skip-link" href="#contenido"><span lang="en">Skip to content</span><span lang="es">Saltar al contenido</span></a>
+    <header id="site-header" class="site-header"></header>
+
+    <main id="contenido">
+        <section class="page-hero" aria-labelledby="page-title">
+            <div class="page-hero__inner page-hero__inner--single container">
+                <div class="page-hero__content">
+                    <span class="page-hero__eyebrow"><span lang="en">Section 01 · First steps</span><span lang="es">Sección 01 · Primeros pasos</span></span>
+                    <h1 id="page-title" class="page-hero__title">
+                        <span lang="en">The vocabulary nobody explained to you</span>
+                        <span lang="es">El vocabulario que nadie te explicó</span>
+                    </h1>
+                    <p class="page-hero__lead">
+                        <span lang="en">Veterans talk as if everyone was born knowing what “C6 R5” means. Ever said “oh yeah, sure” in a chat without understanding a thing? Oh well, it happened. Okay, let me explain.</span>
+                        <span lang="es">Los veteranos hablamos como si todos hubieran nacido sabiendo qué es «C6 R5». ¿Alguna vez dijiste «ah, sí, claro» en un chat sin entender nada? Ni modo, ya pasó. A ver, te explico.</span>
+                    </p>
+                    <div class="page-hero__meta">
+                        <span class="meta-badge" data-last-update></span>
+                        <button id="mark-read-button" class="button button--ghost button--small" type="button" aria-pressed="false"></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <nav class="page-toc" aria-label="On this page" data-aria-label-en="On this page" data-aria-label-es="En esta página">
+            <div class="container">
+                <ul class="page-toc__list">
+                    <li><a class="page-toc__link" href="#ar">AR</a></li>
+                    <li><a class="page-toc__link" href="#nivel-mundo"><span lang="en">World Level</span><span lang="es">Nivel del mundo</span></a></li>
+                    <li><a class="page-toc__link" href="#personajes"><span lang="en">Characters</span><span lang="es">Personajes</span></a></li>
+                    <li><a class="page-toc__link" href="#armas"><span lang="en">Weapons</span><span lang="es">Armas</span></a></li>
+                    <li><a class="page-toc__link" href="#artefactos"><span lang="en">Artifacts</span><span lang="es">Artefactos</span></a></li>
+                    <li><a class="page-toc__link" href="#elementos"><span lang="en">Elements</span><span lang="es">Elementos</span></a></li>
+                    <li><a class="page-toc__link" href="#resina"><span lang="en">Resin</span><span lang="es">Resina</span></a></li>
+                    <li><a class="page-toc__link" href="glosario.html"><span lang="en">Glossary →</span><span lang="es">Glosario →</span></a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <section class="section" aria-labelledby="page-title">
+            <div class="container">
+
+                <!-- AR -->
+                <article id="ar" class="topic">
+                    <img class="topic__icon" src="../assets/icons/items/exp-aventura.webp" alt="">
+                    <div class="topic__body">
+                        <h2 class="topic__title"><span lang="en">AR · Adventure Rank</span><span lang="es">AR · Rango de Aventura</span></h2>
+                        <p>
+                            <span lang="en">It's your <strong>account</strong> level, not your characters' level. It goes up with Adventure EXP, which you get from almost everything: quests, daily commissions, opening chests, unlocking teleport waypoints, completing the Adventurer Handbook and spending resin (each point of Original Resin gives you 5 Adventure EXP).</span>
+                            <span lang="es">Es el nivel de tu <strong>cuenta</strong>, no de tus personajes. Sube con EXP de aventura, que consigues con casi todo: misiones, comisiones diarias, abrir cofres, activar teletransportadores, completar el Manual del aventurero y gastar resina (cada punto de Resina original te da 5 de EXP de aventura).</span>
+                        </p>
+                        <p>
+                            <span lang="en">At some ranks (25, 35, 45 and 50) your AR gets “stuck” until you complete an <strong>ascension quest</strong>. It's not a bug: look for it in your quest list.</span>
+                            <span lang="es">En algunos rangos (25, 35, 45 y 50) el AR se «atora» hasta que completas una <strong>misión de ascenso</strong>. No es un error del juego: búscala en tu lista de misiones.</span>
+                        </p>
+                        <ul class="stat-list" aria-label="What AR unlocks" data-aria-label-en="What AR unlocks" data-aria-label-es="Qué desbloquea el AR">
+                            <li><strong>AR 16</strong> <span lang="en">Co-op mode.</span><span lang="es">Modo cooperativo.</span></li>
+                            <li><strong>AR 20</strong> <span lang="en">Spiral Abyss and World Level 1.</span><span lang="es">Abismo de la Espiral y nivel del mundo 1.</span></li>
+                            <li><strong>AR 24</strong> <span lang="en">Encounter Points for commissions.</span><span lang="es">Puntos de encuentro para las comisiones.</span></li>
+                            <li><strong>AR 35</strong> <span lang="en">Serenitea Pot (it also requires story progress).</span><span lang="es">Tetera de Serenidad (también pide avanzar en la historia).</span></li>
+                            <li><strong>AR 45</strong> <span lang="en">Max-level artifact domains.</span><span lang="es">Dominios de artefactos de nivel máximo.</span></li>
+                        </ul>
+                        <div class="topic__columns">
+                            <div class="callout callout--warning">
+                                <strong class="callout__title"><span lang="en">You screwed up if...</span><span lang="es">Ya la cagaste si...</span></strong>
+                                <p>
+                                    <span lang="en">...you skipped the main story. Many features (and entire regions) unlock through Archon Quests, not just AR.</span>
+                                    <span lang="es">te saltaste la historia principal. Muchas funciones (y regiones enteras) se desbloquean con misiones del Arconte, no solo con AR.</span>
+                                </p>
+                            </div>
+                            <div class="callout callout--tip">
+                                <strong class="callout__title"><span lang="en">Oh well. Let me help</span><span lang="es">Ni modo. A ver, te ayudo</span></strong>
+                                <p>
+                                    <span lang="en">Don't rush your AR: higher AR means stronger enemies. Level up at your characters' pace and you'll be fine.</span>
+                                    <span lang="es">No corras para subir de AR: más AR significa enemigos más fuertes. Sube al ritmo de tus personajes y vas a estar bien.</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Nivel del mundo -->
+                <article id="nivel-mundo" class="topic">
+                    <img class="topic__icon" src="../assets/images/characters/paimon.webp" alt="">
+                    <div class="topic__body">
+                        <h2 class="topic__title"><span lang="en">World Level</span><span lang="es">Nivel del mundo</span></h2>
+                        <p>
+                            <span lang="en">It controls how hard the open world is: <strong>enemy level</strong> and <strong>reward quality</strong> (more materials and better drops from bosses and domains). It goes up automatically with your AR; sometimes, after an ascension quest.</span>
+                            <span lang="es">Controla la dificultad del mundo abierto: el <strong>nivel de los enemigos</strong> y la <strong>calidad de las recompensas</strong> (más materiales y mejores botines de jefes y dominios). Sube automáticamente con tu AR; algunas veces, después de una misión de ascenso.</span>
+                        </p>
+                        <div class="table-wrapper">
+                            <table class="data-table">
+                                <caption><span lang="en">Approximate match between AR and World Level.</span><span lang="es">Equivalencia aproximada entre AR y nivel del mundo.</span></caption>
+                                <thead>
+                                    <tr>
+                                        <th scope="col">AR</th>
+                                        <th scope="col">20</th>
+                                        <th scope="col">25</th>
+                                        <th scope="col">30</th>
+                                        <th scope="col">35</th>
+                                        <th scope="col">40</th>
+                                        <th scope="col">45</th>
+                                        <th scope="col">50</th>
+                                        <th scope="col">55</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row"><span lang="en">World Level</span><span lang="es">Nivel del mundo</span></th>
+                                        <td>1</td>
+                                        <td>2</td>
+                                        <td>3</td>
+                                        <td>4</td>
+                                        <td>5</td>
+                                        <td>6</td>
+                                        <td>7</td>
+                                        <td>8</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="topic__columns">
+                            <div class="callout callout--warning">
+                                <strong class="callout__title"><span lang="en">You screwed up if...</span><span lang="es">Ya la cagaste si...</span></strong>
+                                <p>
+                                    <span lang="en">...you did the ascension quest with your characters at level 40. Enemies level up all at once; your characters don't.</span>
+                                    <span lang="es">hiciste la misión de ascenso con tus personajes en nivel 40. Los enemigos suben de golpe; tus personajes, no.</span>
+                                </p>
+                            </div>
+                            <div class="callout callout--tip">
+                                <strong class="callout__title"><span lang="en">Oh well. Let me help</span><span lang="es">Ni modo. A ver, te ayudo</span></strong>
+                                <p>
+                                    <span lang="en">Getting beaten up? You can temporarily lower your World Level in the game settings. It's not giving up, it's strategy.</span>
+                                    <span lang="es">¿Te están pateando? Puedes bajar el nivel del mundo temporalmente desde los ajustes del juego. No es rendirse, es estrategia.</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Personajes -->
+                <article id="personajes" class="topic">
+                    <img class="topic__icon" src="../assets/images/characters/viajero.webp" alt="">
+                    <div class="topic__body">
+                        <h2 class="topic__title"><span lang="en">Characters: level, ascension and talents</span><span lang="es">Personajes: nivel, ascensión y talentos</span></h2>
+                        <p>
+                            <span lang="en">Upgrading a character has several parts, and each one uses different materials:</span>
+                            <span lang="es">Mejorar a un personaje tiene varias partes, y cada una usa materiales distintos:</span>
+                        </p>
+                        <ul class="stat-list">
+                            <li>
+                                <strong><span lang="en">Level</span><span lang="es">Nivel</span></strong>
+                                <span lang="en">From 1 to 90. Raised with EXP books and Mora.</span>
+                                <span lang="es">Del 1 al 90. Se sube con libros de EXP y Mora.</span>
+                            </li>
+                            <li>
+                                <strong><span lang="en">Ascension</span><span lang="es">Ascensión</span></strong>
+                                <span lang="en">At levels 20, 40, 50, 60, 70 and 80 the character stops until you give them ascension materials.</span>
+                                <span lang="es">En los niveles 20, 40, 50, 60, 70 y 80 el personaje se detiene hasta que le das materiales de ascensión.</span>
+                            </li>
+                            <li>
+                                <strong><span lang="en">Talents</span><span lang="es">Talentos</span></strong>
+                                <span lang="en">Normal Attack, Elemental Skill and Elemental Burst. From 1 to 10, with talent books.</span>
+                                <span lang="es">Ataque normal, Habilidad elemental y Habilidad definitiva. Del 1 al 10, con libros de talento.</span>
+                            </li>
+                            <li>
+                                <strong><span lang="en">Constellations</span><span lang="es">Constelaciones</span></strong>
+                                <span lang="en">From C0 to C6. You get them with copies of the same character.</span>
+                                <span lang="es">De C0 a C6. Se consiguen con copias del mismo personaje.</span>
+                            </li>
+                        </ul>
+                        <div class="topic__columns">
+                            <div class="callout callout--warning">
+                                <strong class="callout__title"><span lang="en">You screwed up if...</span><span lang="es">Ya la cagaste si...</span></strong>
+                                <p>
+                                    <span lang="en">...you leveled up ten characters at once. There isn't enough Mora and, in the end, none of them is strong.</span>
+                                    <span lang="es">subiste a diez personajes a la vez. La Mora no alcanza y al final ninguno queda fuerte.</span>
+                                </p>
+                            </div>
+                            <div class="callout callout--tip">
+                                <strong class="callout__title"><span lang="en">Oh well. Let me help</span><span lang="es">Ni modo. A ver, te ayudo</span></strong>
+                                <p>
+                                    <span lang="en">To start, level 70–80 and talents at 6 on your main team is more than enough. First, the talent each character uses the most.</span>
+                                    <span lang="es">Para empezar, nivel 70–80 y talentos en 6 en tu equipo principal es más que suficiente. Prioriza el talento que más usa cada personaje.</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Armas -->
+                <article id="armas" class="topic">
+                    <img class="topic__icon" src="../assets/icons/items/arma-espada.webp" alt="">
+                    <div class="topic__body">
+                        <h2 class="topic__title"><span lang="en">Weapons: rarity, refinement and upgrades</span><span lang="es">Armas: rareza, refinamiento y mejora</span></h2>
+                        <p>
+                            <span lang="en">There are five types: <strong>sword, claymore, polearm, bow and catalyst</strong>. Each character can only use one. Weapons go from 1★ to 5★, level up with enhancement ores (Mystic is the best one), ascend like characters and are <strong>refined</strong> from R1 to R5 using copies of the same weapon.</span>
+                            <span lang="es">Hay cinco tipos: <strong>espada, mandoble, lanza, arco y catalizador</strong>. Cada personaje solo puede usar uno. Las armas van de 1★ a 5★, se suben de nivel con minerales de refinamiento (el místico es el mejor), se ascienden como los personajes y se <strong>refinan</strong> de R1 a R5 usando copias de la misma arma.</span>
+                        </p>
+                        <div class="topic__columns">
+                            <div class="callout callout--warning">
+                                <strong class="callout__title"><span lang="en">You screwed up if...</span><span lang="es">Ya la cagaste si...</span></strong>
+                                <p>
+                                    <span lang="en">...you gave your DPS any 5★ weapon just because it's shinier. If its effect is meant for another role, you're wasting it.</span>
+                                    <span lang="es">le diste a tu DPS cualquier arma de 5★ solo porque brilla más. Si su efecto es para otro rol, la estás desperdiciando.</span>
+                                </p>
+                            </div>
+                            <div class="callout callout--tip">
+                                <strong class="callout__title"><span lang="en">Oh well. Let me help</span><span lang="es">Ni modo. A ver, te ayudo</span></strong>
+                                <p>
+                                    <span lang="en">A suitable 4★ weapon, or a craftable one (made with blueprints at the blacksmith), can perform just as well or even better.</span>
+                                    <span lang="es">Un arma de 4★ adecuada, o una forjable (de las que se hacen con planos en la herrería), puede rendir igual o mejor.</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Artefactos -->
+                <article id="artefactos" class="topic">
+                    <img class="topic__icon" src="../assets/icons/items/artefacto-flor.webp" alt="">
+                    <div class="topic__body">
+                        <h2 class="topic__title"><span lang="en">Artifacts: pieces, stats and sets</span><span lang="es">Artefactos: piezas, estadísticas y sets</span></h2>
+                        <p>
+                            <span lang="en">Each character wears five pieces. All of them have a <strong>main stat</strong> and up to four <strong>substats</strong> that improve as you level the piece up. Equipping 2 or 4 pieces of the same set gives you extra bonuses.</span>
+                            <span lang="es">Cada personaje lleva cinco piezas. Todas tienen una <strong>estadística principal</strong> y hasta cuatro <strong>secundarias</strong> que mejoran al subir la pieza de nivel. Si equipas 2 o 4 piezas del mismo set obtienes bonos extra.</span>
+                        </p>
+                        <ul class="stat-list" aria-label="Main stat of each piece" data-aria-label-en="Main stat of each piece" data-aria-label-es="Estadística principal de cada pieza">
+                            <li>
+                                <strong><span lang="en">Flower</span><span lang="es">Flor</span></strong>
+                                <span lang="en">Always HP.</span><span lang="es">Siempre Vida.</span>
+                            </li>
+                            <li>
+                                <strong><span lang="en">Plume</span><span lang="es">Pluma</span></strong>
+                                <span lang="en">Always ATK.</span><span lang="es">Siempre ATQ.</span>
+                            </li>
+                            <li>
+                                <strong><span lang="en">Sands</span><span lang="es">Reloj</span></strong>
+                                <span lang="en">ATK%, HP%, DEF%, Elemental Mastery or Energy Recharge.</span>
+                                <span lang="es">ATQ %, Vida %, DEF %, Maestría Elemental o Recarga de Energía.</span>
+                            </li>
+                            <li>
+                                <strong><span lang="en">Goblet</span><span lang="es">Cáliz</span></strong>
+                                <span lang="en">Elemental or Physical DMG Bonus, ATK%, HP%, DEF% or Elemental Mastery.</span>
+                                <span lang="es">Bono de daño elemental o físico, ATQ %, Vida %, DEF % o Maestría.</span>
+                            </li>
+                            <li>
+                                <strong><span lang="en">Circlet</span><span lang="es">Corona</span></strong>
+                                <span lang="en">CRIT Rate, CRIT DMG, Healing Bonus, ATK%, HP%, DEF% or Elemental Mastery.</span>
+                                <span lang="es">Prob. CRIT, Daño CRIT, Bono de curación, ATQ %, Vida %, DEF % o Maestría.</span>
+                            </li>
+                        </ul>
+                        <div class="topic__columns">
+                            <div class="callout callout--warning">
+                                <strong class="callout__title"><span lang="en">You screwed up if...</span><span lang="es">Ya la cagaste si...</span></strong>
+                                <p>
+                                    <span lang="en">...you went looking for the perfect artifact at AR 30. 5★ pieces mostly drop in high-level domains, which open at AR 45.</span>
+                                    <span lang="es">te pusiste a buscar el artefacto perfecto en AR 30. Las piezas de 5★ salen sobre todo en los dominios de nivel alto, que se abren en AR 45.</span>
+                                </p>
+                            </div>
+                            <div class="callout callout--tip">
+                                <strong class="callout__title"><span lang="en">Oh well. Let me help</span><span lang="es">Ni modo. A ver, te ayudo</span></strong>
+                                <p>
+                                    <span lang="en">Right main stat first, substats later. A well-chosen 2+2 set combo is more than enough at the start.</span>
+                                    <span lang="es">Primero la estadística principal correcta, luego las secundarias. Un 2+2 de sets bien elegido te sirve de sobra al inicio.</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Elementos -->
+                <article id="elementos" class="topic">
+                    <img class="topic__icon" src="../assets/icons/elements/anemo.svg" alt="">
+                    <div class="topic__body">
+                        <h2 class="topic__title"><span lang="en">The seven elements</span><span lang="es">Los siete elementos</span></h2>
+                        <p>
+                            <span lang="en">Each character uses one element. On their own they're already useful, but the fun starts when you combine them: those are <strong>elemental reactions</strong>. They also help you solve puzzles outside of combat.</span>
+                            <span lang="es">Cada personaje usa un elemento. Por sí solos ya son útiles, pero lo interesante pasa cuando los combinas: eso son las <strong>reacciones elementales</strong>. También sirven fuera del combate para resolver acertijos.</span>
+                        </p>
+                        <div class="element-grid">
+                            <div class="element-card element--anemo">
+                                <div class="element-card__header">
+                                    <img src="../assets/icons/elements/anemo.svg" alt="">
+                                    <h3 class="element-card__name">Anemo</h3>
+                                </div>
+                                <p>
+                                    <span lang="en">Wind. Groups enemies and spreads other elements with Swirl. Creates currents for gliding.</span>
+                                    <span lang="es">Viento. Agrupa enemigos y esparce otros elementos con Torbellino. Crea corrientes para planear.</span>
+                                </p>
+                            </div>
+                            <div class="element-card element--geo">
+                                <div class="element-card__header">
+                                    <img src="../assets/icons/elements/geo.svg" alt="">
+                                    <h3 class="element-card__name">Geo</h3>
+                                </div>
+                                <p>
+                                    <span lang="en">Rock. Constructs, shields and heavy hits. Great at breaking Geo shields.</span>
+                                    <span lang="es">Roca. Construcciones, escudos y golpes contundentes. Rompe muy bien los escudos de Geo.</span>
+                                </p>
+                            </div>
+                            <div class="element-card element--electro">
+                                <div class="element-card__header">
+                                    <img src="../assets/icons/elements/electro.svg" alt="">
+                                    <h3 class="element-card__name">Electro</h3>
+                                </div>
+                                <p>
+                                    <span lang="en">Lightning. Reacts with almost everything and powers electric mechanisms around the world.</span>
+                                    <span lang="es">Rayo. Reacciona con casi todo y activa mecanismos eléctricos del mundo.</span>
+                                </p>
+                            </div>
+                            <div class="element-card element--dendro">
+                                <div class="element-card__header">
+                                    <img src="../assets/icons/elements/dendro.svg" alt="">
+                                    <h3 class="element-card__name">Dendro</h3>
+                                </div>
+                                <p>
+                                    <span lang="en">Nature. Unlocks Bloom, Quicken and Burning. Makes certain plants grow.</span>
+                                    <span lang="es">Naturaleza. Abre Florecimiento, Aceleración y Quemadura. Hace crecer ciertas plantas.</span>
+                                </p>
+                            </div>
+                            <div class="element-card element--hydro">
+                                <div class="element-card__header">
+                                    <img src="../assets/icons/elements/hydro.svg" alt="">
+                                    <h3 class="element-card__name">Hydro</h3>
+                                </div>
+                                <p>
+                                    <span lang="en">Water. Wets enemies, puts out fire and boosts Pyro with Vaporize.</span>
+                                    <span lang="es">Agua. Moja a los enemigos, apaga el fuego y potencia a Pyro con Vaporizado.</span>
+                                </p>
+                            </div>
+                            <div class="element-card element--pyro">
+                                <div class="element-card__header">
+                                    <img src="../assets/icons/elements/pyro.svg" alt="">
+                                    <h3 class="element-card__name">Pyro</h3>
+                                </div>
+                                <p>
+                                    <span lang="en">Fire. Vaporize, Melt and Overloaded. Burns grass and wooden shields, and lights torches.</span>
+                                    <span lang="es">Fuego. Vaporizado, Derretido y Sobrecarga. Quema pasto y escudos de madera, enciende antorchas.</span>
+                                </p>
+                            </div>
+                            <div class="element-card element--cryo">
+                                <div class="element-card__header">
+                                    <img src="../assets/icons/elements/cryo.svg" alt="">
+                                    <h3 class="element-card__name">Cryo</h3>
+                                </div>
+                                <p>
+                                    <span lang="en">Ice. Freezes wet enemies, and water so you can walk on it.</span>
+                                    <span lang="es">Hielo. Congela enemigos mojados y el agua para caminar sobre ella.</span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="callout callout--note">
+                            <strong class="callout__title"><span lang="en">Want to see them in action?</span><span lang="es">¿Quieres verlos en acción?</span></strong>
+                            <p>
+                                <span lang="en">Try any combination in the <a href="reacciones.html#laboratorio">Elemental Lab</a>.</span>
+                                <span lang="es">Prueba cualquier combinación en el <a href="reacciones.html#laboratorio">Laboratorio elemental</a>.</span>
+                            </p>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Resina -->
+                <article id="resina" class="topic">
+                    <img class="topic__icon" src="../assets/icons/items/resina-original.webp" alt="">
+                    <div class="topic__body">
+                        <h2 class="topic__title"><span lang="en">Resin: what it's for and how it works</span><span lang="es">Resina: para qué sirve y cómo funciona</span></h2>
+                        <p>
+                            <span lang="en">It's the “energy” you spend to claim rewards from domains, bosses and Ley Line Blossoms. Exploring, fighting in the open world and doing quests does <strong>not</strong> cost resin.</span>
+                            <span lang="es">Es la «energía» que gastas para reclamar recompensas de dominios, jefes y flores de líneas ley. Explorar, pelear en el mundo y hacer misiones <strong>no</strong> cuesta resina.</span>
+                        </p>
+                        <ul class="stat-list">
+                            <li>
+                                <strong><span lang="en">Original Resin</span><span lang="es">Resina original</span></strong>
+                                <span lang="en">Max 200. It regenerates 1 point every 8 minutes.</span>
+                                <span lang="es">Máximo 200. Se regenera 1 punto cada 8 minutos.</span>
+                            </li>
+                            <li>
+                                <strong><span lang="en">Condensed Resin</span><span lang="es">Resina condensada</span></strong>
+                                <span lang="en">Made from Original Resin; it lets you claim several rewards at once. It saves time, not resin.</span>
+                                <span lang="es">Se fabrica con Resina original y te deja reclamar varias recompensas de una sola vez. Ahorra tiempo, no resina.</span>
+                            </li>
+                            <li>
+                                <strong><span lang="en">Fragile Resin</span><span lang="es">Resina frágil</span></strong>
+                                <span lang="en">Restores 60 Original Resin. You get it from AR rewards and events.</span>
+                                <span lang="es">Restaura 60 de Resina original. La consigues en recompensas de AR y eventos.</span>
+                            </li>
+                            <li>
+                                <strong><span lang="en">Costs</span><span lang="es">Costos</span></strong>
+                                <span lang="en">Domains and blossoms: 20 · Normal bosses: 40 · Weekly bosses: 30 (first 3 of the week), then 60.</span>
+                                <span lang="es">Dominios y flores: 20 · Jefes normales: 40 · Jefes semanales: 30 (las 3 primeras de la semana) y luego 60.</span>
+                            </li>
+                        </ul>
+                        <div class="topic__columns">
+                            <div class="callout callout--warning">
+                                <strong class="callout__title"><span lang="en">You screwed up if...</span><span lang="es">Ya la cagaste si...</span></strong>
+                                <p>
+                                    <span lang="en">...you left your resin full for several days. Once it hits 200 it stops regenerating: everything you don't spend is lost.</span>
+                                    <span lang="es">dejaste la resina llena varios días. Al llegar a 200 deja de regenerarse: todo lo que no gastas se pierde.</span>
+                                </p>
+                            </div>
+                            <div class="callout callout--tip">
+                                <strong class="callout__title"><span lang="en">Oh well. Let me help</span><span lang="es">Ni modo. A ver, te ayudo</span></strong>
+                                <p>
+                                    <span lang="en">Don't know what to spend it on? Mora or EXP blossoms, they never go to waste. More details in <a href="recursos.html#planificador-resina">Resources</a>.</span>
+                                    <span lang="es">¿No sabes en qué gastarla? Flores de Mora o de EXP, nunca sobran. Más detalles en <a href="recursos.html#planificador-resina">Recursos</a>.</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <div class="callout callout--note">
+                    <strong class="callout__title"><span lang="en">Still lost with some word?</span><span lang="es">¿Todavía te pierdes con alguna palabra?</span></strong>
+                    <p>
+                        <span lang="en">Check the <a href="glosario.html">Glossary</a>: it has all the weird words you'll read in chats, videos and guides.</span>
+                        <span lang="es">Revisa el <a href="glosario.html">Glosario</a>: ahí están todas las palabras raras que vas a leer en chats, videos y guías.</span>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <nav id="section-pagination" class="section-pagination container" aria-label="Sections" data-aria-label-en="Section navigation" data-aria-label-es="Navegación entre secciones"></nav>
+    </main>
+
+    <footer id="site-footer" class="site-footer"></footer>
+
+    <script src="../data/site-content.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+</html>

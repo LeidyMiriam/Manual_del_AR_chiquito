@@ -1,0 +1,1670 @@
+/* ==========================================================================
+   components.css — Componentes reutilizables
+   --------------------------------------------------------------------------
+   1. Botones y chips
+   2. Tarjetas, rejillas y avisos (callouts)
+   3. Insignias, estrellas y etiquetas
+   4. Tablas
+   5. Formularios y paneles de resultados
+   6. Barras de progreso
+   7. Inicio y herramientas: accesos, consejo, secciones, herramientas y confesiones
+   8. Primeros pasos: temas, elementos y glosario
+   9. Equipos: roles, equipos recomendados, fichero y armador
+   10. Reacciones: laboratorio y enciclopedia
+   11. Rutina: checklist
+   12. Exploración: pasos y pasivas
+   13. Actividades: dominios de hoy y actividades avanzadas
+   14. Pity: medidor
+   ========================================================================== */
+
+/* 1. Botones y chips ------------------------------------------------------ */
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 22px;
+    font-weight: 800;
+    line-height: 1.2;
+    text-decoration: none;
+    color: var(--color-adventure-blue-dark);
+    background-color: var(--color-parchment-gold);
+    border: 2px solid var(--color-parchment-gold);
+    border-radius: 999px;
+    cursor: pointer;
+    transition: transform var(--transition-fast), background-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.button:hover {
+    color: var(--color-adventure-blue-dark);
+    background-color: #f0d9a3;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-soft);
+}
+
+.button--secondary {
+    color: var(--color-adventure-blue);
+    background-color: transparent;
+    border-color: var(--color-adventure-blue);
+}
+
+.button--secondary:hover {
+    color: var(--color-on-dark);
+    background-color: var(--color-adventure-blue);
+}
+
+/* Botón transparente para fondos oscuros */
+.button--ghost {
+    color: var(--color-on-dark);
+    background-color: transparent;
+    border-color: rgba(229, 201, 139, 0.6);
+}
+
+.button--ghost:hover {
+    color: var(--color-adventure-blue-dark);
+    background-color: var(--color-parchment-gold);
+}
+
+.button--ghost[aria-pressed="true"] {
+    color: var(--color-adventure-blue-dark);
+    background-color: var(--color-dendro);
+    border-color: var(--color-dendro);
+}
+
+.button--small {
+    padding: 7px 14px;
+    font-size: 0.88rem;
+}
+
+.button--danger {
+    color: var(--color-warning);
+    background-color: transparent;
+    border-color: var(--color-warning);
+}
+
+.button--danger:hover {
+    color: #fff;
+    background-color: var(--color-warning);
+}
+
+.button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+/* Chip: botón pequeño para filtros (usa aria-pressed para su estado) */
+.chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: var(--color-adventure-blue);
+    background-color: var(--color-paper-light);
+    border: 1px solid var(--color-line);
+    border-radius: 999px;
+    cursor: pointer;
+    transition: background-color var(--transition-fast), border-color var(--transition-fast);
+}
+
+.chip:hover {
+    border-color: var(--color-gold-deep);
+}
+
+.chip[aria-pressed="true"] {
+    color: var(--color-on-dark);
+    background-color: var(--color-adventure-blue);
+    border-color: var(--color-adventure-blue);
+}
+
+.chip img {
+    width: 18px;
+    height: 18px;
+}
+
+/* 2. Tarjetas, rejillas y avisos ----------------------------------------- */
+.grid {
+    display: grid;
+    gap: 20px;
+}
+
+.grid--2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.grid--3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.grid--4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+
+.card {
+    position: relative;
+    padding: 24px;
+    background-color: var(--color-paper-light);
+    border: 1px solid var(--color-line);
+    border-radius: var(--radius-medium);
+    box-shadow: var(--shadow-soft);
+}
+
+/* Línea dorada superior: detalle de "diario de aventuras" */
+.card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 24px;
+    right: 24px;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--color-parchment-gold), transparent);
+}
+
+.card__title {
+    font-size: 1.15rem;
+}
+
+.card__text:last-child {
+    margin-bottom: 0;
+}
+
+/* Aviso destacado con el color y el ícono de un elemento, como los paneles del juego:
+   nota = Hydro (por defecto), consejo = Dendro, error = Pyro, regla = Geo */
+.callout {
+    --callout-color: var(--color-note);
+    --callout-background: var(--color-note-background);
+    --callout-icon: url("../assets/icons/elements/hydro.svg");
+    position: relative;
+    margin: 24px 0;
+    padding: 16px 22px 16px 68px;
+    background: linear-gradient(100deg, var(--callout-background), var(--color-paper-light) 85%);
+    border: 1px solid var(--color-panel-border);
+    border-left: 4px solid var(--callout-color);
+    border-radius: var(--radius-small);
+}
+
+/* Ícono del elemento dentro de un círculo */
+.callout::before {
+    content: "";
+    position: absolute;
+    top: 14px;
+    left: 18px;
+    width: 34px;
+    height: 34px;
+    background: var(--color-paper-light) var(--callout-icon) center / 24px no-repeat;
+    border: 1px solid var(--callout-color);
+    border-radius: 50%;
+}
+
+.callout > :last-child {
+    margin-bottom: 0;
+}
+
+.callout__title {
+    display: block;
+    margin-bottom: 4px;
+    font-weight: 800;
+    color: var(--callout-color);
+}
+
+.callout--tip {
+    --callout-color: var(--color-tip);
+    --callout-background: var(--color-tip-background);
+    --callout-icon: url("../assets/icons/elements/dendro.svg");
+}
+
+.callout--warning {
+    --callout-color: var(--color-warning);
+    --callout-background: var(--color-warning-background);
+    --callout-icon: url("../assets/icons/elements/pyro.svg");
+}
+
+.callout--rule {
+    --callout-color: var(--color-rule);
+    --callout-background: var(--color-rule-background);
+    --callout-icon: url("../assets/icons/elements/geo.svg");
+}
+
+/* 3. Insignias, estrellas y etiquetas ------------------------------------ */
+.meta-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 5px 12px;
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: var(--color-on-dark);
+    background-color: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(229, 201, 139, 0.35);
+    border-radius: 999px;
+}
+
+.badge {
+    display: inline-block;
+    padding: 2px 10px;
+    font-size: 0.76rem;
+    font-weight: 800;
+    letter-spacing: 0.02em;
+    color: var(--color-adventure-blue);
+    background-color: var(--color-paper-dark);
+    border-radius: 999px;
+}
+
+.badge--free {
+    color: #fff;
+    background-color: var(--color-tip);
+}
+
+.badge--version {
+    color: var(--color-warning);
+    background-color: var(--color-warning-background);
+}
+
+.badge--gold {
+    color: var(--color-adventure-blue-dark);
+    background-color: var(--color-parchment-gold);
+}
+
+/* Insignia con el color del elemento (requiere una clase element--<id>) */
+.element-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 3px 10px 3px 4px;
+    font-size: 0.82rem;
+    font-weight: 800;
+    color: #fff;
+    background-color: var(--element-color);
+    border-radius: 999px;
+}
+
+.element-badge img {
+    width: 20px;
+    height: 20px;
+    padding: 2px;
+    background-color: rgba(255, 255, 255, 0.85);
+    border-radius: 50%;
+}
+
+.stars {
+    color: var(--color-geo);
+    letter-spacing: 0.05em;
+}
+
+/* 4. Tablas --------------------------------------------------------------- */
+.table-wrapper {
+    overflow-x: auto;
+    background-color: var(--color-paper-light);
+    border: 1px solid var(--color-line);
+    border-radius: var(--radius-medium);
+    box-shadow: var(--shadow-soft);
+}
+
+.data-table {
+    min-width: 560px;
+}
+
+.data-table caption {
+    padding: 14px 18px 0;
+    font-size: 0.85rem;
+    color: var(--color-ink-soft);
+    text-align: left;
+    caption-side: bottom;
+    padding-bottom: 14px;
+}
+
+.data-table th,
+.data-table td {
+    padding: 14px 18px;
+    text-align: left;
+    vertical-align: top;
+    border-bottom: 1px solid var(--color-line);
+}
+
+.data-table thead th {
+    font-size: 0.82rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-parchment-gold);
+    background-color: var(--color-adventure-blue);
+}
+
+.data-table tbody tr:last-child th,
+.data-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.data-table tbody tr:hover {
+    background-color: rgba(229, 201, 139, 0.15);
+}
+
+/* Celda con ícono y nombre de un recurso */
+.resource-name {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 800;
+    color: var(--color-adventure-blue);
+}
+
+.resource-name img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+/* 5. Formularios y paneles de resultados --------------------------------- */
+.tool-card {
+    padding: 28px;
+    background-color: var(--color-paper-light);
+    border: 2px solid var(--color-parchment-gold);
+    border-radius: var(--radius-large);
+    box-shadow: var(--shadow-raised);
+}
+
+.tool-card__header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 20px;
+}
+
+.tool-card__header img {
+    width: 52px;
+    height: 52px;
+    object-fit: contain;
+}
+
+.tool-card__title {
+    margin: 0;
+    font-family: var(--font-display);
+    font-size: 1.35rem;
+}
+
+.tool-card__subtitle {
+    margin: 0;
+    font-size: 0.92rem;
+    color: var(--color-ink-soft);
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+.form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+/* Campo suelto dentro de una herramienta (fuera de .form-row) */
+.tool-card > .form-field {
+    margin-bottom: 20px;
+}
+
+.form-field__label {
+    font-size: 0.9rem;
+    font-weight: 800;
+    color: var(--color-adventure-blue);
+}
+
+.form-field__hint {
+    font-size: 0.8rem;
+    color: var(--color-ink-soft);
+}
+
+.form-field__input {
+    width: 100%;
+    padding: 10px 14px;
+    color: var(--color-ink);
+    background-color: #fff;
+    border: 1px solid var(--color-line);
+    border-radius: var(--radius-small);
+}
+
+.form-field__input:focus {
+    border-color: var(--color-gold-deep);
+    outline: 2px solid var(--color-parchment-gold);
+    outline-offset: 0;
+}
+
+/* Grupo de dos opciones Sí/No */
+.toggle-group {
+    display: flex;
+    gap: 8px;
+}
+
+.toggle-group .chip {
+    flex: 1;
+    justify-content: center;
+    padding: 9px 12px;
+}
+
+.result-panel {
+    padding: 22px;
+    color: var(--color-on-dark);
+    background-color: var(--color-adventure-blue);
+    border-radius: var(--radius-medium);
+}
+
+.result-panel p {
+    margin-bottom: 0.6em;
+}
+
+.result-panel strong {
+    color: var(--color-parchment-gold);
+}
+
+.result-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.result-stat {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    padding: 14px;
+    background-color: rgba(255, 255, 255, 0.07);
+    border: 1px solid rgba(229, 201, 139, 0.25);
+    border-radius: var(--radius-small);
+}
+
+.result-stat__value {
+    font-family: var(--font-display);
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--color-parchment-gold);
+}
+
+.result-stat__label {
+    font-size: 0.85rem;
+    color: var(--color-on-dark-soft);
+}
+
+.result-panel__note {
+    margin-top: 12px;
+    font-size: 0.82rem;
+    color: var(--color-on-dark-soft);
+}
+
+/* 6. Barras de progreso --------------------------------------------------- */
+.progress {
+    height: 12px;
+    overflow: hidden;
+    background-color: var(--color-paper-dark);
+    border-radius: 999px;
+}
+
+.progress__bar {
+    height: 100%;
+    width: 0;
+    background: linear-gradient(90deg, var(--color-dendro), var(--color-parchment-gold));
+    border-radius: 999px;
+    transition: width 0.35s ease;
+}
+
+.progress__label {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 6px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--color-adventure-blue);
+}
+
+/* 7. Inicio ---------------------------------------------------------------- */
+
+/* Accesos rápidos "¿Qué necesitas aprender hoy?" */
+.quick-links {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.quick-link {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 18px 20px;
+    font-weight: 800;
+    color: var(--color-adventure-blue);
+    text-decoration: none;
+    background-color: var(--color-paper-light);
+    border: 1px solid var(--color-line);
+    border-radius: var(--radius-medium);
+    box-shadow: var(--shadow-soft);
+    transition: transform var(--transition-fast), border-color var(--transition-fast);
+}
+
+.quick-link:hover {
+    color: var(--color-adventure-blue);
+    border-color: var(--color-gold-deep);
+    transform: translateY(-3px);
+}
+
+.quick-link img {
+    width: 44px;
+    height: 44px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+/* Consejo de la veterana */
+.veteran-tip {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    gap: 22px;
+    align-items: center;
+    padding: 26px 30px;
+    background-color: #f6eedb;
+    border: 2px dashed var(--color-parchment-gold);
+    border-radius: var(--radius-large);
+}
+
+.veteran-tip__avatar {
+    width: 84px;
+    height: 84px;
+    background-color: var(--color-paper-light);
+    border: 3px solid var(--color-parchment-gold);
+    border-radius: 50%;
+}
+
+.veteran-tip__label {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--color-gold-deep);
+}
+
+.veteran-tip__title {
+    margin: 4px 0;
+    font-family: var(--font-body);
+    font-size: 1.35rem;
+    font-weight: 800;
+}
+
+.veteran-tip__text {
+    margin: 0;
+    color: var(--color-ink-soft);
+}
+
+/* Secciones del manual con estado de lectura */
+.reading-progress {
+    max-width: 520px;
+    margin-bottom: 28px;
+}
+
+.section-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.section-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    min-height: 150px;
+    padding: 22px;
+    color: var(--color-ink);
+    text-decoration: none;
+    background-color: var(--color-paper-light);
+    border: 1px solid var(--color-line);
+    border-radius: var(--radius-medium);
+    transition: transform var(--transition-fast), border-color var(--transition-fast);
+}
+
+.section-card:hover {
+    color: var(--color-ink);
+    border-color: var(--color-gold-deep);
+    transform: translateY(-3px);
+}
+
+.section-card__number {
+    font-family: var(--font-display);
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--color-parchment-gold);
+}
+
+.section-card__title {
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: var(--color-adventure-blue);
+}
+
+.section-card__summary {
+    font-size: 0.9rem;
+    color: var(--color-ink-soft);
+}
+
+.section-card__status {
+    display: none;
+    position: absolute;
+    top: 16px;
+    right: 16px;
+}
+
+.section-card.is-read {
+    border-color: var(--color-tip);
+    background-color: var(--color-tip-background);
+}
+
+.section-card.is-read .section-card__status {
+    display: inline-block;
+}
+
+/* Página de herramientas: una tarjeta enlazada por herramienta */
+.tool-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.tool-link {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 22px;
+    color: var(--color-on-dark);
+    text-decoration: none;
+    background-color: var(--color-adventure-blue);
+    border: 1px solid var(--color-panel-border);
+    border-radius: var(--radius-medium);
+    transition: transform var(--transition-fast), background-color var(--transition-fast);
+}
+
+.tool-link:hover {
+    color: var(--color-on-dark);
+    background-color: var(--color-adventure-blue-light);
+    transform: translateY(-3px);
+}
+
+.tool-link img {
+    width: 44px;
+    height: 44px;
+    object-fit: contain;
+}
+
+.tool-link__type {
+    font-size: 0.74rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-parchment-gold);
+}
+
+.tool-link__title {
+    font-size: 1.08rem;
+    font-weight: 800;
+}
+
+.tool-link__text {
+    font-size: 0.9rem;
+    color: var(--color-on-dark-soft);
+}
+
+/* Confesiones de un AR 60 */
+.confessions {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.confessions__item {
+    padding: 20px 22px 20px 52px;
+    position: relative;
+    background-color: var(--color-paper-light);
+    border: 1px solid var(--color-line);
+    border-radius: var(--radius-medium);
+}
+
+.confessions__item::before {
+    content: "✦";
+    position: absolute;
+    top: 18px;
+    left: 20px;
+    color: var(--color-paimon-pink);
+}
+
+.confessions__item--soon {
+    font-style: italic;
+    color: var(--color-ink-soft);
+    border-style: dashed;
+}
+
+/* Lema */
+.motto {
+    margin: 0;
+    padding: 48px 24px;
+    text-align: center;
+}
+
+.motto__quote {
+    max-width: 820px;
+    margin: 0 auto 12px;
+    font-family: var(--font-display);
+    font-size: clamp(1.4rem, 3vw, 2rem);
+    font-weight: 700;
+    line-height: 1.35;
+    color: var(--color-adventure-blue);
+}
+
+.motto__caption {
+    font-weight: 700;
+    color: var(--color-tip);
+}
+
+/* 8. Primeros pasos -------------------------------------------------------- */
+.topic {
+    display: grid;
+    grid-template-columns: 88px minmax(0, 1fr);
+    gap: 24px;
+    padding: 32px 0;
+    border-bottom: 1px solid var(--color-line);
+}
+
+.topic:last-of-type {
+    border-bottom: none;
+}
+
+.topic__icon {
+    width: 88px;
+    height: 88px;
+    padding: 12px;
+    object-fit: contain;
+    background-color: var(--color-paper-light);
+    border: 2px solid var(--color-parchment-gold);
+    border-radius: 50%;
+}
+
+.topic__title {
+    font-family: var(--font-display);
+    font-size: 1.6rem;
+}
+
+.topic__columns {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+    margin-top: 16px;
+}
+
+.topic__columns .callout {
+    margin: 0;
+}
+
+.stat-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    gap: 12px;
+    margin: 16px 0;
+    padding: 0;
+    list-style: none;
+}
+
+.stat-list li {
+    padding: 12px 14px;
+    font-size: 0.92rem;
+    background-color: var(--color-paper-light);
+    border: 1px solid var(--color-line);
+    border-radius: var(--radius-small);
+}
+
+.stat-list strong {
+    display: block;
+    color: var(--color-adventure-blue);
+}
+
+.element-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    gap: 14px;
+    margin-top: 16px;
+}
+
+.element-card {
+    padding: 18px;
+    background-color: var(--color-paper-light);
+    border: 1px solid var(--color-line);
+    border-top: 5px solid var(--element-color);
+    border-radius: var(--radius-medium);
+}
+
+.element-card__header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+}
+
+.element-card__header img {
+    width: 36px;
+    height: 36px;
+}
+
+.element-card__name {
+    margin: 0;
+    font-size: 1.1rem;
+    color: var(--element-color);
+}
+
+.element-card p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+.glossary {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px 24px;
+    margin: 0;
+}
+
+.glossary__item {
+    padding: 14px 18px;
+    background-color: var(--color-paper-light);
+    border: 1px solid var(--color-line);
+    border-radius: var(--radius-small);
+}
+
+.glossary dt {
+    font-weight: 800;
+    color: var(--color-adventure-blue);
+}
+
+.glossary dd {
+    margin: 4px 0 0;
+    font-size: 0.92rem;
+    color: var(--color-ink-soft);
+}
+
+/* 9. Equipos --------------------------------------------------------------- */
+.role-card {
+    text-align: center;
+}
+
+.role-card__symbol {
+    display: grid;
+    place-items: center;
+    width: 56px;
+    height: 56px;
+    margin: 0 auto 12px;
+    font-size: 1.5rem;
+    color: var(--color-adventure-blue-dark);
+    background-color: var(--color-parchment-gold);
+    border-radius: 50%;
+}
+
+.role-card p {
+    margin: 0;
+    font-size: 0.92rem;
+    color: var(--color-ink-soft);
+}
+
+/* Tarjeta de equipo recomendado */
+.team-card {
+    display: grid;
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    overflow: hidden;
+    margin-bottom: 28px;
+    background-color: var(--color-paper-light);
+    border: 1px solid var(--color-line);
+    border-radius: var(--radius-large);
+    box-shadow: var(--shadow-soft);
+}
+
+.team-card__media {
+    position: relative;
+    min-height: 260px;
+    background-color: var(--color-adventure-blue);
+}
+
+.team-card__media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Variante con la imagen arriba, para ilustraciones panorámicas */
+.team-card--stacked {
+    grid-template-columns: minmax(0, 1fr);
+}
+
+.team-card--stacked .team-card__media {
+    min-height: 0;
+    height: 340px;
+}
+
+.team-card--stacked .team-card__media img {
+    object-position: center 22%;
+}
+
+/* Variante sin imagen grande: se muestran los avatares sobre fondo azul */
+.team-card__media--avatars {
+    display: grid;
+    place-items: center;
+    padding: 24px;
+    background-image: radial-gradient(circle at 30% 30%, rgba(111, 158, 44, 0.45), transparent 60%);
+}
+
+.team-card__body {
+    padding: 28px;
+}
+
+.team-card__title {
+    font-family: var(--font-display);
+    font-size: 1.45rem;
+}
+
+.team-members {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 0 0 16px;
+    padding: 0;
+    list-style: none;
+}
+
+.team-member {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    width: 72px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-align: center;
+    color: var(--color-adventure-blue);
+}
+
+.team-member img {
+    width: 60px;
+    height: 60px;
+    background-color: var(--element-color, var(--color-paper-dark));
+    border: 2px solid var(--color-parchment-gold);
+    border-radius: 50%;
+}
+
+.team-card__media--avatars .team-member {
+    width: 96px;
+    color: var(--color-on-dark);
+}
+
+.team-card__media--avatars .team-member img {
+    width: 84px;
+    height: 84px;
+}
+
+.pros-cons {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+    margin: 16px 0;
+}
+
+.pros-cons__column {
+    padding: 14px 16px;
+    font-size: 0.92rem;
+    border-radius: var(--radius-small);
+}
+
+.pros-cons__column ul {
+    margin: 0;
+}
+
+.pros-cons__column--pros {
+    background-color: var(--color-tip-background);
+    border-left: 3px solid var(--color-tip);
+}
+
+.pros-cons__column--cons {
+    background-color: var(--color-warning-background);
+    border-left: 3px solid var(--color-warning);
+}
+
+.pros-cons__title {
+    display: block;
+    margin-bottom: 4px;
+    font-weight: 800;
+}
+
+.pros-cons__column--pros .pros-cons__title { color: var(--color-tip); }
+.pros-cons__column--cons .pros-cons__title { color: var(--color-warning); }
+
+.team-card__alternatives {
+    font-size: 0.92rem;
+}
+
+/* Filtros del fichero de personajes */
+.catalog-filters {
+    display: grid;
+    gap: 16px;
+    margin-bottom: 20px;
+    padding: 22px;
+    background-color: var(--color-paper-light);
+    border: 1px solid var(--color-line);
+    border-radius: var(--radius-medium);
+}
+
+.filter-group {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+}
+
+.filter-group__label {
+    min-width: 130px;
+    font-size: 0.85rem;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    color: var(--color-adventure-blue);
+}
+
+.catalog-filters__row {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) auto;
+    gap: 16px;
+    align-items: end;
+}
+
+.catalog-count {
+    margin: 0 0 16px;
+    font-weight: 700;
+    color: var(--color-ink-soft);
+}
+
+.character-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 18px;
+}
+
+.character-card {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background-color: var(--color-paper-light);
+    border: 1px solid var(--color-line);
+    border-radius: var(--radius-medium);
+    box-shadow: var(--shadow-soft);
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.character-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-raised);
+}
+
+.character-card__header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 16px;
+    /* Degradado con el color del elemento del personaje */
+    background: linear-gradient(135deg, var(--element-color), var(--color-adventure-blue));
+}
+
+.character-card__portrait {
+    width: 76px;
+    height: 76px;
+    flex-shrink: 0;
+    background-color: rgba(255, 255, 255, 0.2);
+    border: 2px solid var(--color-parchment-gold);
+    border-radius: 50%;
+}
+
+.character-card__name {
+    margin: 0;
+    font-size: 1.15rem;
+    color: #fff;
+}
+
+.character-card__rarity {
+    display: block;
+    font-size: 0.9rem;
+    color: var(--color-parchment-gold);
+}
+
+.character-card__weapon {
+    display: block;
+    font-size: 0.82rem;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.character-card__body {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    gap: 10px;
+    padding: 16px;
+}
+
+.character-card__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.character-card__summary,
+.character-card__obtain {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+.character-card__obtain {
+    color: var(--color-ink-soft);
+}
+
+.character-card__tip {
+    margin: 0;
+    padding: 10px 12px;
+    font-size: 0.86rem;
+    background-color: var(--color-tip-background);
+    border-left: 3px solid var(--color-tip);
+    border-radius: 4px;
+}
+
+.empty-state {
+    padding: 32px;
+    text-align: center;
+    color: var(--color-ink-soft);
+    background-color: var(--color-paper-light);
+    border: 2px dashed var(--color-line);
+    border-radius: var(--radius-medium);
+}
+
+/* 10. Reacciones ----------------------------------------------------------- */
+.lab {
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+    gap: 28px;
+    align-items: start;
+}
+
+.element-picker {
+    margin: 0 0 22px;
+    padding: 0;
+    border: none;
+}
+
+.element-picker__legend {
+    margin-bottom: 10px;
+    padding: 0;
+    font-weight: 800;
+    color: var(--color-adventure-blue);
+}
+
+.element-picker__hint {
+    display: block;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--color-ink-soft);
+}
+
+.element-picker__options {
+    display: grid;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+    gap: 8px;
+}
+
+.element-option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    padding: 10px 4px;
+    font-size: 0.78rem;
+    font-weight: 800;
+    color: var(--color-adventure-blue);
+    background-color: #fff;
+    border: 2px solid var(--color-line);
+    border-radius: var(--radius-small);
+    cursor: pointer;
+    transition: border-color var(--transition-fast), transform var(--transition-fast), background-color var(--transition-fast);
+}
+
+.element-option img {
+    width: 38px;
+    height: 38px;
+}
+
+.element-option:hover {
+    border-color: var(--element-color);
+    transform: translateY(-2px);
+}
+
+.element-option[aria-pressed="true"] {
+    color: #fff;
+    background-color: var(--element-color);
+    border-color: var(--element-color);
+}
+
+.element-option[aria-pressed="true"] img {
+    padding: 3px;
+    background-color: rgba(255, 255, 255, 0.85);
+    border-radius: 50%;
+}
+
+.lab__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.reaction-result {
+    min-height: 100%;
+}
+
+.reaction-result__formula {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+    font-weight: 800;
+}
+
+.reaction-result__formula img {
+    width: 40px;
+    height: 40px;
+    padding: 4px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 50%;
+}
+
+.reaction-result__name {
+    margin: 0;
+    font-size: 1.9rem;
+    color: var(--color-parchment-gold);
+}
+
+.reaction-result__english {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 0.88rem;
+    color: var(--color-on-dark-soft);
+}
+
+.reaction-result__multiplier {
+    display: inline-block;
+    margin-bottom: 12px;
+    padding: 4px 12px;
+    font-weight: 800;
+    color: var(--color-adventure-blue-dark);
+    background-color: var(--color-parchment-gold);
+    border-radius: 999px;
+}
+
+.reaction-result__section {
+    margin-top: 14px;
+    padding-top: 12px;
+    font-size: 0.92rem;
+    border-top: 1px solid rgba(229, 201, 139, 0.25);
+}
+
+.reaction-result__section ul {
+    margin: 6px 0 0;
+}
+
+.reaction-group {
+    margin-bottom: 36px;
+}
+
+.reaction-group__header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 12px;
+    margin-bottom: 14px;
+}
+
+.reaction-group__title {
+    margin: 0;
+    font-family: var(--font-display);
+    font-size: 1.35rem;
+}
+
+.reaction-group__description {
+    margin: 0;
+    color: var(--color-ink-soft);
+}
+
+.reaction-entry__elements {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    margin-bottom: 10px;
+}
+
+.reaction-entry__elements img {
+    width: 28px;
+    height: 28px;
+}
+
+.reaction-entry__english {
+    display: block;
+    margin: -6px 0 8px;
+    font-size: 0.82rem;
+    color: var(--color-ink-soft);
+}
+
+.reaction-entry p {
+    font-size: 0.92rem;
+}
+
+.advanced-card__family {
+    margin-bottom: 8px;
+}
+
+.advanced-card__enablers {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+.reaction-chart {
+    max-width: 520px;
+    margin: 0 auto;
+}
+
+.reaction-chart img {
+    width: 100%;
+    background-color: #fff;
+    border: 1px solid var(--color-line);
+    border-radius: var(--radius-medium);
+}
+
+.reaction-chart figcaption {
+    margin-top: 8px;
+    font-size: 0.85rem;
+    text-align: center;
+    color: var(--color-ink-soft);
+}
+
+/* 11. Rutina: checklist ---------------------------------------------------- */
+.checklist-card__header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 14px;
+}
+
+.checklist-card__counter {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-gold-deep);
+}
+
+.checklist-card__reset-info {
+    margin: 10px 0 0;
+    font-size: 0.85rem;
+    color: var(--color-ink-soft);
+}
+
+.checklist {
+    display: grid;
+    gap: 10px;
+    margin: 18px 0;
+    padding: 0;
+    list-style: none;
+}
+
+.checklist__item label {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    gap: 14px;
+    align-items: start;
+    padding: 14px 16px;
+    background-color: #fff;
+    border: 1px solid var(--color-line);
+    border-radius: var(--radius-small);
+    cursor: pointer;
+    transition: background-color var(--transition-fast), border-color var(--transition-fast);
+}
+
+.checklist__item label:hover {
+    border-color: var(--color-gold-deep);
+}
+
+.checklist__checkbox {
+    width: 22px;
+    height: 22px;
+    margin: 2px 0 0;
+    accent-color: var(--color-tip);
+    cursor: pointer;
+}
+
+.checklist__text {
+    font-weight: 700;
+}
+
+/* inline-block evita que el tachado de la tarea completada se aplique también a la pista */
+.checklist__hint {
+    display: inline-block;
+    width: 100%;
+    font-size: 0.86rem;
+    font-weight: 400;
+    color: var(--color-ink-soft);
+}
+
+/* Tarea completada: se tacha y toma el color Dendro de los consejos */
+.checklist__item.is-done label {
+    background-color: var(--color-tip-background);
+    border-color: var(--color-tip);
+}
+
+.checklist__item.is-done .checklist__text {
+    text-decoration: line-through;
+    color: var(--color-tip);
+}
+
+.checklist-card__done-message {
+    margin: 0;
+    padding: 10px 14px;
+    font-weight: 700;
+    color: var(--color-tip);
+    background-color: var(--color-tip-background);
+    border-left: 3px solid var(--color-tip);
+    border-radius: var(--radius-small);
+}
+
+/* 12. Exploración ----------------------------------------------------------- */
+.map-cta {
+    display: grid;
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+    gap: 28px;
+    align-items: center;
+    padding: 32px;
+    color: var(--color-on-dark);
+    background-color: var(--color-adventure-blue);
+    background-image: radial-gradient(circle at 90% 20%, rgba(113, 155, 145, 0.45), transparent 50%);
+    border: 2px solid var(--color-parchment-gold);
+    border-radius: var(--radius-large);
+}
+
+.map-cta__title {
+    font-size: 1.7rem;
+    color: var(--color-on-dark);
+}
+
+.map-cta p {
+    color: var(--color-on-dark-soft);
+}
+
+.map-cta__legend {
+    display: grid;
+    gap: 10px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.map-cta__legend li {
+    padding: 10px 14px;
+    font-size: 0.92rem;
+    background-color: rgba(255, 255, 255, 0.07);
+    border: 1px solid rgba(229, 201, 139, 0.25);
+    border-radius: var(--radius-small);
+}
+
+.steps {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    counter-reset: step-counter;
+}
+
+.step {
+    position: relative;
+    padding-top: 52px;
+    counter-increment: step-counter;
+}
+
+/* Número del paso generado con un contador CSS */
+.step::after {
+    content: counter(step-counter);
+    position: absolute;
+    top: 18px;
+    left: 24px;
+    display: grid;
+    place-items: center;
+    width: 34px;
+    height: 34px;
+    font-family: var(--font-display);
+    font-weight: 700;
+    color: var(--color-adventure-blue-dark);
+    background-color: var(--color-parchment-gold);
+    border-radius: 50%;
+}
+
+/* 13. Actividades ------------------------------------------------------------ */
+.day-selector {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 18px;
+}
+
+.day-selector .chip.is-today {
+    border-color: var(--color-tip);
+    border-width: 2px;
+}
+
+.domains-status {
+    margin-bottom: 16px;
+    font-weight: 700;
+    color: var(--color-tip);
+}
+
+.domain-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+}
+
+.domain-card__region {
+    margin-bottom: 8px;
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+}
+
+.domain-card__books {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.domain-card__books li {
+    padding: 6px 0;
+    font-weight: 700;
+    border-bottom: 1px dashed var(--color-line);
+}
+
+.domain-card__books li:last-child {
+    border-bottom: none;
+}
+
+/* Nombre en inglés del libro (solo se muestra en español) */
+.domain-card__english {
+    float: right;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--color-ink-soft);
+}
+
+.activity-card__requirements {
+    margin-bottom: 12px;
+    padding: 10px 14px;
+    font-size: 0.9rem;
+    background-color: #f6eedb;
+    border-radius: var(--radius-small);
+}
+
+.activity-card dl {
+    margin: 0;
+}
+
+.activity-card dt {
+    margin-top: 10px;
+    font-weight: 800;
+    color: var(--color-adventure-blue);
+}
+
+.activity-card dd {
+    margin: 2px 0 0;
+    font-size: 0.92rem;
+}
+
+/* 14. Pity: medidor ------------------------------------------------------------ */
+.pity-meter {
+    position: relative;
+    margin: 18px 0 8px;
+}
+
+.pity-meter__track {
+    position: relative;
+    height: 18px;
+    overflow: hidden;
+    background-color: rgba(255, 255, 255, 0.12);
+    border-radius: 999px;
+}
+
+.pity-meter__fill {
+    height: 100%;
+    width: 0;
+    background: linear-gradient(90deg, var(--color-dendro), var(--color-parchment-gold), var(--color-pyro));
+    border-radius: 999px;
+    transition: width 0.35s ease;
+}
+
+/* Marca vertical que indica dónde empieza el "soft pity" */
+.pity-meter__soft-marker {
+    position: absolute;
+    top: -4px;
+    bottom: -4px;
+    width: 3px;
+    background-color: #fff;
+    border-radius: 2px;
+}
+
+.pity-meter__labels {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 6px;
+    font-size: 0.8rem;
+    color: var(--color-on-dark-soft);
+}

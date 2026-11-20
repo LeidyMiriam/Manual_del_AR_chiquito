@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Resource management in Genshin Impact: resin, Primogems, Mora, EXP books, ores and artifacts. Includes a resin planner and an EXP calculator.">
+    <title>Resources · Manual del AR Chikito</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+
+    <script src="../js/storage.js"></script>
+    <script src="../js/language.js"></script>
+</head>
+<body data-root="../" data-page="recursos"
+      data-title-en="Resources · Manual del AR Chikito"
+      data-title-es="Recursos · Manual del AR Chikito">
+    <a class="skip-link" href="#contenido"><span lang="en">Skip to content</span><span lang="es">Saltar al contenido</span></a>
+    <header id="site-header" class="site-header"></header>
+
+    <main id="contenido">
+        <section class="page-hero" aria-labelledby="page-title">
+            <div class="page-hero__inner page-hero__inner--single container">
+                <div class="page-hero__content">
+                    <span class="page-hero__eyebrow"><span lang="en">Section 04 · Resource management</span><span lang="es">Sección 04 · Administración de recursos</span></span>
+                    <h1 id="page-title" class="page-hero__title">
+                        <span lang="en">Your resources aren't infinite (even if the game wants you to think so)</span>
+                        <span lang="es">Tus recursos no son infinitos (aunque el juego quiera que lo creas)</span>
+                    </h1>
+                    <p class="page-hero__lead">
+                        <span lang="en">Resin, Primogems, Mora, books, ores... Everything runs out, and almost always right when you finally get the character you wanted. Already spent it all? Oh well. Okay, let me help so it doesn't happen again.</span>
+                        <span lang="es">Resina, Protogemas, Mora, libros, minerales... Todo se acaba, y casi siempre justo cuando por fin te sale el personaje que querías. ¿Ya te lo gastaste todo? Ni modo. A ver, te ayudo a que no te vuelva a pasar.</span>
+                    </p>
+                    <div class="page-hero__meta">
+                        <span class="meta-badge" data-last-update></span>
+                        <button id="mark-read-button" class="button button--ghost button--small" type="button" aria-pressed="false"></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <nav class="page-toc" aria-label="On this page" data-aria-label-en="On this page" data-aria-label-es="En esta página">
+            <div class="container">
+                <ul class="page-toc__list">
+                    <li><a class="page-toc__link" href="#prioridades"><span lang="en">Priority table</span><span lang="es">Tabla de prioridades</span></a></li>
+                    <li><a class="page-toc__link" href="#resina-fragil"><span lang="en">The resin catch</span><span lang="es">El matiz de la resina</span></a></li>
+                    <li><a class="page-toc__link" href="#planificador-resina"><span lang="en">Resin planner</span><span lang="es">Planificador de resina</span></a></li>
+                    <li><a class="page-toc__link" href="#calculadora-exp"><span lang="en">EXP calculator</span><span lang="es">Calculadora de EXP</span></a></li>
+                    <li><a class="page-toc__link" href="#materiales"><span lang="en">Materials</span><span lang="es">Materiales</span></a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Tabla de prioridades -->
+        <section id="prioridades" class="section" aria-labelledby="priorities-title">
+            <div class="container">
+                <header class="section-header">
+                    <span class="section-header__eyebrow"><span lang="en">What to do with each thing</span><span lang="es">Qué hacer con cada cosa</span></span>
+                    <h2 id="priorities-title" class="section-header__title"><span lang="en">Priority table</span><span lang="es">Tabla de prioridades</span></h2>
+                    <p class="section-header__lead">
+                        <span lang="en">If you're only going to read one part of this section, make it this one. I mean it.</span>
+                        <span lang="es">Si solo vas a leer una parte de esta sección, que sea esta. Te lo digo en serio.</span>
+                    </p>
+                </header>
+
+                <div class="table-wrapper">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th scope="col"><span lang="en">Resource</span><span lang="es">Recurso</span></th>
+                                <th scope="col"><span lang="en">Tip</span><span lang="es">Consejo</span></th>
+                                <th scope="col"><span lang="en">Why?</span><span lang="es">¿Por qué?</span></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row"><span class="resource-name"><img src="../assets/icons/items/resina-fragil.webp" alt=""><span lang="en">Fragile Resin</span><span lang="es">Resina frágil</span></span></th>
+                                <td><span lang="en">Save it, preferably until AR 45.</span><span lang="es">Guardar preferentemente hasta AR 45.</span></td>
+                                <td><span lang="en">At AR 45 the max-level artifact domains open, where it's worth much more.</span><span lang="es">En AR 45 se abren los dominios de artefactos de nivel máximo, donde rinde mucho más.</span></td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><span class="resource-name"><img src="../assets/icons/items/protogema.webp" alt=""><span lang="en">Primogems</span><span lang="es">Protogemas</span></span></th>
+                                <td><span lang="en">Save them for Intertwined Fates if you want event characters.</span><span lang="es">Reservar para Destinos entrelazados si quieres personajes de evento.</span></td>
+                                <td><span lang="en">160 Primogems = 1 wish. I told you: don't spend them refilling resin or on Acquaint Fates.</span><span lang="es">160 Protogemas = 1 deseo. Te lo dije: no las gastes en recargar resina ni en Destinos del encuentro.</span></td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><span class="resource-name"><img src="../assets/icons/items/destino-encuentro.webp" alt=""><span lang="en">Acquaint Fates</span><span lang="es">Destinos del encuentro</span></span></th>
+                                <td><span lang="en">Use them on the standard banner.</span><span lang="es">Utilizar en el banner permanente.</span></td>
+                                <td><span lang="en">They don't work on event banners. Use them guilt-free.</span><span lang="es">No sirven en los banners de evento. Úsalos sin culpa.</span></td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><span class="resource-name"><img src="../assets/icons/items/mora.webp" alt="">Mora</span></th>
+                                <td><span lang="en">Don't level up characters you don't use on impulse.</span><span lang="es">No subir personajes que no utilizas por impulso.</span></td>
+                                <td><span lang="en">Taking a character from level 1 to 90 costs over two million Mora, without counting talents.</span><span lang="es">Llevar a un personaje de nivel 1 a 90 cuesta más de dos millones de Mora, sin contar talentos.</span></td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><span class="resource-name"><img src="../assets/icons/items/libro-heroe.webp" alt=""><span lang="en">EXP books</span><span lang="es">Libros EXP</span></span></th>
+                                <td><span lang="en">Prioritize your main team.</span><span lang="es">Priorizar tu equipo principal.</span></td>
+                                <td><span lang="en">Going from level 1 to 90 takes about 419 Hero's Wit books.</span><span lang="es">De nivel 1 a 90 se necesitan unos 419 libros de Experiencia del héroe.</span></td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><span class="resource-name"><img src="../assets/icons/items/mineral-mistico.webp" alt=""><span lang="en">Ores</span><span lang="es">Minerales</span></span></th>
+                                <td><span lang="en">Keep a stockpile for weapons.</span><span lang="es">Mantener una reserva para armas.</span></td>
+                                <td><span lang="en">When you finally get the weapon you wanted, you'll need all of them at once.</span><span lang="es">Cuando por fin te salga el arma que querías, los vas a necesitar todos de golpe.</span></td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><span class="resource-name"><img src="../assets/icons/items/artefacto-flor.webp" alt=""><span lang="en">Artifacts</span><span lang="es">Artefactos</span></span></th>
+                                <td><span lang="en">Prioritize main stats before chasing perfection.</span><span lang="es">Priorizar estadísticas principales antes de buscar perfección.</span></td>
+                                <td><span lang="en">A piece with the right main stat beats an “almost perfect” one with the wrong main stat.</span><span lang="es">Una pieza con la principal correcta rinde más que una «casi perfecta» con la principal equivocada.</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div id="resina-fragil" class="callout callout--rule">
+                    <strong class="callout__title"><span lang="en">An important catch about resin</span><span lang="es">Matiz importante sobre la resina</span></strong>
+                    <p>
+                        <span lang="en">Before AR 45 you <strong>should use your Original Resin</strong> for ascensions, talents, weapons and materials. What's recommended to postpone is heavy artifact farming (and spending Fragile Resin). At AR 45 the max-level domains unlock, which guarantee at least one five-star artifact per 20-resin reward.</span>
+                        <span lang="es">Antes de AR 45 <strong>sí debes usar tu Resina original</strong> para ascensiones, talentos, armas y materiales. Lo que se recomienda posponer es el farmeo intensivo de artefactos (y gastar la resina frágil). En AR 45 se desbloquean los dominios de nivel máximo, que garantizan al menos un artefacto de cinco estrellas por cada recompensa de 20 de resina.</span>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Planificador de resina -->
+        <section id="planificador-resina" class="section section--alt" aria-labelledby="resin-title">
+            <div class="container">
+                <div class="grid grid--2">
+                    <div class="tool-card">
+                        <div class="tool-card__header">
+                            <img src="../assets/icons/items/resina-original.webp" alt="">
+                            <div>
+                                <h2 id="resin-title" class="tool-card__title"><span lang="en">Resin planner</span><span lang="es">Planificador de resina</span></h2>
+                                <p class="tool-card__subtitle"><span lang="en">When does it fill up and what can you spend it on?</span><span lang="es">¿Cuándo se llena y en qué la puedes gastar?</span></p>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-field">
+                                <label class="form-field__label" for="current-resin"><span lang="en">Current Original Resin</span><span lang="es">Resina original actual</span></label>
+                                <input id="current-resin" class="form-field__input" type="number" min="0" max="200" value="120">
+                                <span class="form-field__hint"><span lang="en">Between 0 and 200.</span><span lang="es">Entre 0 y 200.</span></span>
+                            </div>
+                            <div class="form-field">
+                                <label class="form-field__label" for="fragile-resin"><span lang="en">Saved Fragile Resin</span><span lang="es">Resinas frágiles guardadas</span></label>
+                                <input id="fragile-resin" class="form-field__input" type="number" min="0" value="0">
+                                <span class="form-field__hint"><span lang="en">Each one restores 60.</span><span lang="es">Cada una restaura 60.</span></span>
+                            </div>
+                        </div>
+                        <div class="callout callout--tip">
+                            <strong class="callout__title"><span lang="en">Okay, let me help</span><span lang="es">A ver, te ayudo</span></strong>
+                            <p>
+                                <span lang="en">If you know you won't play tomorrow, spend it today, even if it's on Mora blossoms. Full resin is wasted resin.</span>
+                                <span lang="es">Si sabes que mañana no vas a jugar, gástala hoy aunque sea en flores de Mora. Resina llena es resina desperdiciada.</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div id="resin-result" class="result-panel" aria-live="polite"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Calculadora de EXP -->
+        <section id="calculadora-exp" class="section" aria-labelledby="exp-title">
+            <div class="container">
+                <div class="grid grid--2">
+                    <div class="tool-card">
+                        <div class="tool-card__header">
+                            <img src="../assets/icons/items/libro-heroe.webp" alt="">
+                            <div>
+                                <h2 id="exp-title" class="tool-card__title"><span lang="en">EXP and Mora calculator</span><span lang="es">Calculadora de EXP y Mora</span></h2>
+                                <p class="tool-card__subtitle"><span lang="en">Before leveling someone up “on impulse”, check how much it costs.</span><span lang="es">Antes de subir a alguien «por impulso», mira cuánto cuesta.</span></p>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-field">
+                                <label class="form-field__label" for="from-level"><span lang="en">Current level</span><span lang="es">Nivel actual</span></label>
+                                <!-- Las opciones las llena js/resource-planner.js -->
+                                <select id="from-level" class="form-field__input"></select>
+                            </div>
+                            <div class="form-field">
+                                <label class="form-field__label" for="to-level"><span lang="en">Target level</span><span lang="es">Nivel objetivo</span></label>
+                                <select id="to-level" class="form-field__input"></select>
+                            </div>
+                        </div>
+                        <p class="form-field__hint">
+                            <span lang="en">Calculated with Hero's Wit books (20,000 EXP each). Leveling up costs 1 Mora per 5 EXP points.</span>
+                            <span lang="es">Cálculo con libros de Experiencia del héroe (20 000 EXP cada uno). Subir de nivel cuesta 1 Mora por cada 5 puntos de EXP.</span>
+                        </p>
+                    </div>
+                    <div id="exp-result" class="result-panel" aria-live="polite"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Materiales -->
+        <section id="materiales" class="section section--alt" aria-labelledby="materials-title">
+            <div class="container">
+                <header class="section-header">
+                    <span class="section-header__eyebrow"><span lang="en">What is each thing for?</span><span lang="es">¿Para qué es cada cosa?</span></span>
+                    <h2 id="materials-title" class="section-header__title"><span lang="en">Materials, without the confusion</span><span lang="es">Los materiales, sin confusión</span></h2>
+                </header>
+                <div class="grid grid--3">
+                    <article class="card">
+                        <h3 class="card__title"><span lang="en">Character ascension</span><span lang="es">Ascensión de personajes</span></h3>
+                        <ul>
+                            <li><span lang="en">Gems of the character's element (normal bosses).</span><span lang="es">Gemas del elemento del personaje (jefes normales).</span></li>
+                            <li><span lang="en">Normal boss material (from the second ascension on).</span><span lang="es">Material de jefe normal (a partir de la segunda ascensión).</span></li>
+                            <li><span lang="en">Local specialties from their region.</span><span lang="es">Especialidades locales de su región.</span></li>
+                            <li><span lang="en">Common enemy drops.</span><span lang="es">Materiales de enemigos comunes.</span></li>
+                        </ul>
+                    </article>
+                    <article class="card">
+                        <h3 class="card__title"><span lang="en">Talents</span><span lang="es">Talentos</span></h3>
+                        <ul>
+                            <li><span lang="en">Talent books (domains, depending on the day).</span><span lang="es">Libros de talento (dominios, según el día).</span></li>
+                            <li><span lang="en">Common enemy drops.</span><span lang="es">Materiales de enemigos comunes.</span></li>
+                            <li><span lang="en">Weekly boss material for high levels.</span><span lang="es">Material de jefe semanal para niveles altos.</span></li>
+                            <li><span lang="en">Crown of Insight for level 10.</span><span lang="es">Corona de la Perspicacia para el nivel 10.</span></li>
+                        </ul>
+                    </article>
+                    <article class="card">
+                        <h3 class="card__title"><span lang="en">Mora and EXP</span><span lang="es">Mora y EXP</span></h3>
+                        <ul>
+                            <li><span lang="en">Gold Ley Line Blossoms: Mora.</span><span lang="es">Flores doradas de líneas ley: Mora.</span></li>
+                            <li><span lang="en">Blue Ley Line Blossoms: EXP books.</span><span lang="es">Flores azules de líneas ley: libros de EXP.</span></li>
+                            <li><span lang="en">Events, expeditions and quests.</span><span lang="es">Eventos, expediciones y misiones.</span></li>
+                        </ul>
+                    </article>
+                </div>
+                <div class="callout callout--warning">
+                    <strong class="callout__title"><span lang="en">I told you: don't use Crowns on impulse</span><span lang="es">Te lo dije: no uses Coronas por impulso</span></strong>
+                    <p>
+                        <span lang="en">The Crown of Insight is super rare. Already used it on someone you don't even play? You screwed up, oh well. Next time, save it for someone you'll really use for a long time.</span>
+                        <span lang="es">La Corona de la Perspicacia es rarísima. ¿Ya la usaste en alguien que ni juegas? Ya la cagaste, ni modo. A la próxima guárdala para alguien que de verdad vayas a usar mucho tiempo.</span>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <nav id="section-pagination" class="section-pagination container" aria-label="Sections" data-aria-label-en="Section navigation" data-aria-label-es="Navegación entre secciones"></nav>
+    </main>
+
+    <footer id="site-footer" class="site-footer"></footer>
+
+    <script src="../data/site-content.js"></script>
+    <script src="../data/materials.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/resource-planner.js"></script>
+</body>
+</html>

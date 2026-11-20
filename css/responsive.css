@@ -1,0 +1,249 @@
+/* ==========================================================================
+   responsive.css — Adaptación a tabletas y teléfonos
+   --------------------------------------------------------------------------
+   Puntos de quiebre:
+   - 1100px: el menú de la segunda fila pasa a ser desplegable (hamburguesa).
+   - 960px: rejillas de 3-4 columnas pasan a 2; heroes a una columna.
+   - 640px: todo a una columna, márgenes más pequeños.
+   ========================================================================== */
+
+/* Menú desplegable ---------------------------------------------------------- */
+@media (max-width: 1100px) {
+    .nav-toggle {
+        display: flex;
+    }
+
+    .site-nav {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        display: none;
+        max-height: calc(100vh - 70px);   /* si el menú es muy largo, se desplaza por dentro */
+        overflow-y: auto;
+        padding: 12px 0 20px;
+        background-color: var(--color-adventure-blue-dark);
+        border-top: none;
+        border-bottom: 2px solid var(--color-parchment-gold);
+    }
+
+    .site-nav.is-open {
+        display: block;
+    }
+
+    .site-nav__list {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 6px;
+    }
+
+    .site-nav__link {
+        padding: 10px 12px;
+        font-size: 0.95rem;
+    }
+}
+
+/* Tabletas ------------------------------------------------------------------ */
+@media (max-width: 960px) {
+    .page-hero__inner {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 28px;
+        padding-top: 44px;
+        padding-bottom: 44px;
+    }
+
+    .page-hero__media {
+        max-width: 520px;
+    }
+
+    .home-hero__media {
+        max-width: 360px;
+    }
+
+    .grid--3,
+    .grid--4,
+    .quick-links,
+    .section-grid,
+    .tool-grid,
+    .confessions,
+    .steps,
+    .domain-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .team-card,
+    .lab,
+    .map-cta {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .team-card__media {
+        min-height: 220px;
+        max-height: 320px;
+    }
+
+    .catalog-filters__row {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .veteran-tip {
+        grid-template-columns: auto minmax(0, 1fr);
+    }
+
+    .veteran-tip .button {
+        grid-column: 1 / -1;
+        justify-self: start;
+    }
+}
+
+/* Teléfonos ------------------------------------------------------------------ */
+@media (max-width: 640px) {
+    .container,
+    .site-header__inner,
+    .site-nav__list {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .site-header__inner {
+        gap: 10px;
+    }
+
+    .site-header__actions {
+        gap: 8px;
+    }
+
+    .brand__tagline {
+        display: none;
+    }
+
+    /* Nombre más compacto (puede ocupar dos líneas) para que quepan el idioma y el menú */
+    .brand__name {
+        font-size: 0.82rem;
+        letter-spacing: 0.03em;
+    }
+
+    .brand__star {
+        width: 32px;
+        height: 32px;
+        font-size: 1rem;
+    }
+
+    .language-switch__option {
+        padding: 5px 9px;
+    }
+
+    .site-nav__list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .section {
+        padding: 44px 0;
+    }
+
+    .grid--2,
+    .grid--3,
+    .grid--4,
+    .quick-links,
+    .section-grid,
+    .tool-grid,
+    .confessions,
+    .steps,
+    .domain-grid,
+    .glossary,
+    .topic__columns,
+    .pros-cons,
+    .catalog-filters__row,
+    .site-footer__inner,
+    .section-pagination {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .pagination-link--next {
+        grid-column: 1;
+    }
+
+    .topic {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 12px;
+    }
+
+    .topic__icon {
+        width: 68px;
+        height: 68px;
+    }
+
+    .callout {
+        padding-left: 62px;
+    }
+
+    .callout::before {
+        left: 14px;
+    }
+
+    .element-picker__options {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    /* Avatares más pequeños para que los cuatro integrantes quepan en una fila */
+    .team-members {
+        gap: 6px;
+    }
+
+    .team-member {
+        width: 62px;
+        font-size: 0.72rem;
+    }
+
+    .team-member img {
+        width: 52px;
+        height: 52px;
+    }
+
+    .team-card__media--avatars .team-member {
+        width: 80px;
+    }
+
+    .team-card__media--avatars .team-member img {
+        width: 68px;
+        height: 68px;
+    }
+
+    .veteran-tip {
+        grid-template-columns: minmax(0, 1fr);
+        text-align: center;
+        padding: 22px;
+    }
+
+    .veteran-tip__avatar {
+        margin: 0 auto;
+    }
+
+    .veteran-tip .button {
+        justify-self: center;
+    }
+
+    .tool-card,
+    .map-cta,
+    .team-card__body {
+        padding: 20px;
+    }
+
+    .filter-group__label {
+        min-width: 100%;
+    }
+}
+
+/* Usuarios que prefieren menos movimiento ------------------------------------ */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+    }
+}

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Genshin Impact elemental lab: combine elements and learn amplifying, transformative, Dendro, Lunar and Stellar reactions.">
+    <title>Elemental reactions · Manual del AR Chikito</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+
+    <script src="../js/storage.js"></script>
+    <script src="../js/language.js"></script>
+</head>
+<body data-root="../" data-page="reacciones"
+      data-title-en="Elemental reactions · Manual del AR Chikito"
+      data-title-es="Reacciones elementales · Manual del AR Chikito">
+    <a class="skip-link" href="#contenido"><span lang="en">Skip to content</span><span lang="es">Saltar al contenido</span></a>
+    <header id="site-header" class="site-header"></header>
+
+    <main id="contenido">
+        <section class="page-hero" aria-labelledby="page-title">
+            <div class="page-hero__inner container">
+                <div class="page-hero__content">
+                    <span class="page-hero__eyebrow"><span lang="en">Section 03 · Elemental lab</span><span lang="es">Sección 03 · Laboratorio elemental</span></span>
+                    <h1 id="page-title" class="page-hero__title">
+                        <span lang="en">Mixing elements without exploding (much)</span>
+                        <span lang="es">Mezclar elementos sin explotar (mucho)</span>
+                    </h1>
+                    <p class="page-hero__lead">
+                        <span lang="en">Reactions are the reason a well-thought-out four-star team beats a badly built five-star one. Been hitting things for months without combining elements? You screwed up, but oh well. Okay, let me help: try them here before you go fight.</span>
+                        <span lang="es">Las reacciones son la razón por la que un equipo de cuatro estrellas bien pensado le gana a uno de cinco mal armado. ¿Llevas meses pegando sin combinar elementos? Ya la cagaste, pero ni modo. A ver, te ayudo: pruébalas aquí antes de ir a pelear.</span>
+                    </p>
+                    <div class="page-hero__meta">
+                        <span class="meta-badge" data-last-update></span>
+                        <button id="mark-read-button" class="button button--ghost button--small" type="button" aria-pressed="false"></button>
+                    </div>
+                </div>
+                <figure class="page-hero__media">
+                    <img src="../assets/images/mapa-reacciones.jpg"
+                         alt="Diagram of the seven elements joined by arrows with the name of the reaction each pair creates"
+                         data-alt-en="Diagram of the seven elements joined by arrows with the name of the reaction each pair creates"
+                         data-alt-es="Diagrama de los siete elementos unidos por flechas con el nombre de la reacción que forma cada pareja">
+                    <figcaption class="page-hero__caption"><span lang="en">Reaction map (names in English).</span><span lang="es">Mapa de reacciones (nombres en inglés).</span></figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <nav class="page-toc" aria-label="On this page" data-aria-label-en="On this page" data-aria-label-es="En esta página">
+            <div class="container">
+                <ul class="page-toc__list">
+                    <li><a class="page-toc__link" href="#laboratorio"><span lang="en">Lab</span><span lang="es">Laboratorio</span></a></li>
+                    <li><a class="page-toc__link" href="#enciclopedia"><span lang="en">All reactions</span><span lang="es">Todas las reacciones</span></a></li>
+                    <li><a class="page-toc__link" href="#avanzadas"><span lang="en">Lunar and Stellar</span><span lang="es">Lunares y Estelares</span></a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Laboratorio -->
+        <section id="laboratorio" class="section" aria-labelledby="lab-title">
+            <div class="container">
+                <header class="section-header">
+                    <span class="section-header__eyebrow">Reaction Lab</span>
+                    <h2 id="lab-title" class="section-header__title"><span lang="en">Pick two elements and see what happens</span><span lang="es">Elige dos elementos y mira qué pasa</span></h2>
+                    <p class="section-header__lead">
+                        <span lang="en">First the element the enemy already has, then the one that hits it. Careful: in some reactions the order does matter.</span>
+                        <span lang="es">Primero el elemento que ya tiene el enemigo y luego el que lo golpea. Ojo, que en algunas reacciones el orden sí importa.</span>
+                    </p>
+                </header>
+
+                <div class="lab">
+                    <div id="lab-pickers" class="tool-card">
+                        <fieldset class="element-picker">
+                            <legend class="element-picker__legend">
+                                <span lang="en">First element</span><span lang="es">Primer elemento</span>
+                                <span class="element-picker__hint"><span lang="en">The one that “sticks” to the enemy (aura).</span><span lang="es">El que se queda «pegado» al enemigo (aura).</span></span>
+                            </legend>
+                            <!-- Los botones los dibuja js/reactions.js -->
+                            <div id="aura-picker" class="element-picker__options"></div>
+                        </fieldset>
+                        <fieldset class="element-picker">
+                            <legend class="element-picker__legend">
+                                <span lang="en">Second element</span><span lang="es">Segundo elemento</span>
+                                <span class="element-picker__hint"><span lang="en">The hit that triggers the reaction (trigger).</span><span lang="es">El golpe que provoca la reacción (activador).</span></span>
+                            </legend>
+                            <div id="trigger-picker" class="element-picker__options"></div>
+                        </fieldset>
+                        <div class="lab__actions">
+                            <button id="swap-elements-button" class="button button--small button--secondary" type="button">⇄ <span lang="en">Swap order</span><span lang="es">Invertir orden</span></button>
+                            <button id="random-elements-button" class="button button--small" type="button"><span lang="en">Random combination</span><span lang="es">Combinación al azar</span></button>
+                        </div>
+                    </div>
+
+                    <div class="result-panel reaction-result">
+                        <span class="section-header__eyebrow"><span lang="en">Result</span><span lang="es">Resultado</span></span>
+                        <div id="reaction-result" aria-live="polite"></div>
+                        <p class="result-panel__note">
+                            <span lang="en">Educational demo of conventional reactions. Some interactions have extra rules.</span>
+                            <span lang="es">Demostración didáctica de reacciones convencionales. Algunas interacciones tienen reglas adicionales.</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Enciclopedia -->
+        <section id="enciclopedia" class="section section--alt" aria-labelledby="encyclopedia-title">
+            <div class="container">
+                <header class="section-header">
+                    <span class="section-header__eyebrow"><span lang="en">Encyclopedia</span><span lang="es">Enciclopedia</span></span>
+                    <h2 id="encyclopedia-title" class="section-header__title"><span lang="en">All conventional reactions</span><span lang="es">Todas las reacciones convencionales</span></h2>
+                    <p class="section-header__lead">
+                        <span lang="en">The full list, grouped by type, so you know what each combination does.</span>
+                        <span lang="es">Los nombres en español pueden variar según la traducción del juego, por eso incluimos también el nombre en inglés para que puedas buscarlos en wikis y videos.</span>
+                    </p>
+                </header>
+                <!-- Los grupos los dibuja js/reactions.js a partir de REACTIONS -->
+                <div id="reaction-encyclopedia"></div>
+            </div>
+        </section>
+
+        <!-- Reacciones avanzadas -->
+        <section id="avanzadas" class="section" aria-labelledby="advanced-title">
+            <div class="container">
+                <header class="section-header">
+                    <span class="section-header__eyebrow"><span lang="en">Advanced cards</span><span lang="es">Fichas avanzadas</span></span>
+                    <h2 id="advanced-title" class="section-header__title"><span lang="en">Lunar and Stellar reactions</span><span lang="es">Reacciones Lunares y Estelares</span></h2>
+                    <p class="section-header__lead">
+                        <span lang="en">They arrived with Nod-Krai (Lunar) and Snezhnaya (Stellar). They're special versions of reactions you already know, but <strong>not</strong> every character can trigger them just by combining elements.</span>
+                        <span lang="es">Llegaron con Nod-Krai (Lunares) y con Snezhnaya (Estelares). Son versiones especiales de reacciones que ya conoces, pero <strong>no</strong> las puede hacer cualquier personaje combinando elementos.</span>
+                    </p>
+                </header>
+
+                <div class="callout callout--warning">
+                    <strong class="callout__title"><span lang="en">Let me tell you before you get excited</span><span lang="es">Te lo digo antes de que te emociones</span></strong>
+                    <p>
+                        <span lang="en">Lunar reactions only appear if your team has a compatible 5★ Moonsign character. 4★ Moonsign characters raise the team's Moonsign level, but can't trigger them on their own. Stellar reactions also depend on specific characters.</span>
+                        <span lang="es">Las reacciones Lunares solo aparecen si en tu equipo hay un personaje Moonsign de 5★ compatible. Los Moonsign de 4★ suben el nivel de Moonsign del equipo, pero no las activan por sí solos. Las Estelares también dependen de personajes concretos.</span>
+                    </p>
+                </div>
+
+                <!-- Las fichas las dibuja js/reactions.js a partir de ADVANCED_REACTIONS -->
+                <div id="advanced-reactions" class="grid grid--3"></div>
+
+                <div class="callout callout--note">
+                    <strong class="callout__title"><span lang="en">Info that changes with every version</span><span lang="es">Información que cambia con cada versión</span></strong>
+                    <p>
+                        <span lang="en">Every update can add characters who trigger these reactions. Before investing resources, check the character's page on <a href="https://wiki.hoyolab.com/pc/genshin/entry/" target="_blank" rel="noopener">HoYoWiki</a> or <a href="https://keqingmains.com/" target="_blank" rel="noopener">KeqingMains</a>.</span>
+                        <span lang="es">Cada actualización puede agregar personajes que activan estas reacciones. Antes de invertir recursos, revisa la ficha del personaje en <a href="https://wiki.hoyolab.com/pc/genshin/entry/" target="_blank" rel="noopener">HoYoWiki</a> o en <a href="https://keqingmains.com/" target="_blank" rel="noopener">KeqingMains</a>.</span>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <nav id="section-pagination" class="section-pagination container" aria-label="Sections" data-aria-label-en="Section navigation" data-aria-label-es="Navegación entre secciones"></nav>
+    </main>
+
+    <footer id="site-footer" class="site-footer"></footer>
+
+    <script src="../data/site-content.js"></script>
+    <script src="../data/elements.js"></script>
+    <script src="../data/reactions.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/reactions.js"></script>
+</body>
+</html>

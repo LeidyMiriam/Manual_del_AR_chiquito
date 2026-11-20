@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Genshin Impact pity explained: an educational wish calculator, the 50/50 and the guarantee.">
+    <title>Pity · Manual del AR Chikito</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+
+    <script src="../js/storage.js"></script>
+    <script src="../js/language.js"></script>
+</head>
+<body data-root="../" data-page="pity"
+      data-title-en="Pity · Manual del AR Chikito"
+      data-title-es="El pity · Manual del AR Chikito">
+    <a class="skip-link" href="#contenido"><span lang="en">Skip to content</span><span lang="es">Saltar al contenido</span></a>
+    <header id="site-header" class="site-header"></header>
+
+    <main id="contenido">
+        <section class="page-hero" aria-labelledby="page-title">
+            <div class="page-hero__inner container">
+                <div class="page-hero__content">
+                    <span class="page-hero__eyebrow"><span lang="en">Section 08 · Pity: our collective trauma</span><span lang="es">Sección 08 · El pity: nuestro trauma colectivo</span></span>
+                    <h1 id="page-title" class="page-hero__title">
+                        <span lang="en">Pity is not your enemy</span>
+                        <span lang="es">El pity no es tu enemigo</span>
+                    </h1>
+                    <p class="page-hero__lead">
+                        <span lang="en">Well, it is, but you have to understand it. Already lost the 50/50 to Qiqi? Oh well, you screwed up... okay, your luck screwed up. Let me help you calculate how much you have left.</span>
+                        <span lang="es">Bueno, sí, pero hay que entenderlo. ¿Ya perdiste el 50/50 contra Qiqi? Ni modo, ya la cagaste... bueno, la cagó tu suerte. A ver, te ayudo a calcular cuánto te falta.</span>
+                    </p>
+                    <div class="page-hero__meta">
+                        <span class="meta-badge" data-last-update></span>
+                        <button id="mark-read-button" class="button button--ghost button--small" type="button" aria-pressed="false"></button>
+                    </div>
+                </div>
+                <figure class="page-hero__media">
+                    <img src="../assets/images/banner-ejemplo.jpg"
+                         alt="Example of a featured character banner: Mualani, a five-star, next to three four-star characters"
+                         data-alt-en="Example of a featured character banner: Mualani, a five-star, next to three four-star characters"
+                         data-alt-es="Ejemplo de banner promocional de personaje: Mualani, de cinco estrellas, junto a tres personajes de cuatro estrellas">
+                    <figcaption class="page-hero__caption"><span lang="en">This is what a featured character banner looks like.</span><span lang="es">Así se ve un banner promocional de personaje.</span></figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <nav class="page-toc" aria-label="On this page" data-aria-label-en="On this page" data-aria-label-es="En esta página">
+            <div class="container">
+                <ul class="page-toc__list">
+                    <li><a class="page-toc__link" href="#calculadora">Wish Tracker</a></li>
+                    <li><a class="page-toc__link" href="#que-es"><span lang="en">What is pity?</span><span lang="es">¿Qué es el pity?</span></a></li>
+                    <li><a class="page-toc__link" href="#cincuenta"><span lang="en">50/50 and guarantee</span><span lang="es">50/50 y garantizado</span></a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Calculadora -->
+        <section id="calculadora" class="section" aria-labelledby="calculator-title">
+            <div class="container">
+                <div class="grid grid--2">
+                    <div class="tool-card">
+                        <div class="tool-card__header">
+                            <img src="../assets/icons/items/destino-entrelazado.webp" alt="">
+                            <div>
+                                <h2 id="calculator-title" class="tool-card__title">Wish Tracker</h2>
+                                <p class="tool-card__subtitle"><span lang="en">Educational calculator.</span><span lang="es">Calculadora educativa.</span></p>
+                            </div>
+                        </div>
+
+                        <div class="form-field">
+                            <span class="form-field__label" id="banner-label"><span lang="en">Banner type</span><span lang="es">Tipo de banner</span></span>
+                            <div id="banner-selector" class="toggle-group" role="group" aria-labelledby="banner-label">
+                                <button class="chip" type="button" data-banner="character" aria-pressed="true"><span lang="en">Character</span><span lang="es">Personaje</span></button>
+                                <button class="chip" type="button" data-banner="weapon" aria-pressed="false"><span lang="en">Weapon</span><span lang="es">Armas</span></button>
+                                <button class="chip" type="button" data-banner="standard" aria-pressed="false"><span lang="en">Standard</span><span lang="es">Permanente</span></button>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-field">
+                                <label class="form-field__label" for="pulls-input"><span lang="en">Wishes since your last 5★</span><span lang="es">Deseos desde tu último 5★</span></label>
+                                <input id="pulls-input" class="form-field__input" type="number" min="0" max="89" value="0">
+                                <!-- El texto de ayuda y la pregunta del garantizado los escribe js/pity-calculator.js -->
+                                <span id="pulls-hint" class="form-field__hint"></span>
+                            </div>
+                            <div id="guarantee-field" class="form-field">
+                                <span id="guarantee-label" class="form-field__label"></span>
+                                <div id="guarantee-selector" class="toggle-group" role="group" aria-labelledby="guarantee-label">
+                                    <button class="chip" type="button" data-guarantee="no" aria-pressed="true">No</button>
+                                    <button class="chip" type="button" data-guarantee="yes" aria-pressed="false"><span lang="en">Yes</span><span lang="es">Sí</span></button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-field">
+                                <label class="form-field__label" for="primogems-input"><span lang="en">Saved Primogems</span><span lang="es">Protogemas guardadas</span></label>
+                                <input id="primogems-input" class="form-field__input" type="number" min="0" value="0">
+                            </div>
+                            <div class="form-field">
+                                <label class="form-field__label" for="fates-input"><span lang="en">Saved Fates</span><span lang="es">Destinos guardados</span></label>
+                                <input id="fates-input" class="form-field__input" type="number" min="0" value="0">
+                                <span class="form-field__hint">
+                                    <span lang="en">Intertwined for the character and weapon banners; Acquaint for the standard one.</span>
+                                    <span lang="es">Entrelazados para personaje y armas; del encuentro para el permanente.</span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="result-panel">
+                        <div id="pity-result" aria-live="polite"></div>
+                        <p class="result-panel__note">
+                            <span lang="en">Simplified prototype: each banner type has its own history and rules. It doesn't calculate probabilities or guarantee you'll get a character before the limit. “Soft pity” is a community estimate, not official data.</span>
+                            <span lang="es">Prototipo simplificado: cada tipo de banner tiene su propio historial y reglas. No calcula probabilidades ni garantiza que obtendrás un personaje antes del límite. El «soft pity» es un dato estimado por la comunidad, no oficial.</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Qué es el pity -->
+        <section id="que-es" class="section section--alt" aria-labelledby="what-title">
+            <div class="container">
+                <header class="section-header">
+                    <span class="section-header__eyebrow"><span lang="en">The basics</span><span lang="es">Lo básico</span></span>
+                    <h2 id="what-title" class="section-header__title"><span lang="en">What is pity?</span><span lang="es">¿Qué es el pity?</span></h2>
+                </header>
+                <div class="grid grid--3">
+                    <article class="card">
+                        <h3 class="card__title"><span lang="en">The counter</span><span lang="es">El contador</span></h3>
+                        <p class="card__text">
+                            <span lang="en">It's the number of wishes since your last 5★ on that banner type. When it reaches the limit (90 for characters, 80 for weapons), the 5★ is guaranteed.</span>
+                            <span lang="es">Es el número de deseos que llevas desde tu último 5★ en ese tipo de banner. Cuando llega al límite (90 en personajes, 80 en armas), el 5★ está garantizado.</span>
+                        </p>
+                    </article>
+                    <article class="card">
+                        <h3 class="card__title"><span lang="en">“Soft pity”</span><span lang="es">El «soft pity»</span></h3>
+                        <p class="card__text">
+                            <span lang="en">The community noticed that around wish 74 for characters (63 for weapons) the chance goes way up. That's why almost nobody reaches 90. It's an estimate, not official data.</span>
+                            <span lang="es">La comunidad observó que, cerca del deseo 74 en personajes (63 en armas), la probabilidad sube muchísimo. Por eso casi nadie llega al 90. Es un dato estimado, no oficial.</span>
+                        </p>
+                    </article>
+                    <article class="card">
+                        <h3 class="card__title"><span lang="en">The four-star one</span><span lang="es">El de cuatro estrellas</span></h3>
+                        <p class="card__text">
+                            <span lang="en">Every 10 wishes you're guaranteed at least one 4★. That's why you have seven Xianglings and no Bennett... or the other way around.</span>
+                            <span lang="es">Cada 10 deseos tienes garantizado al menos un 4★. Es la razón por la que tienes siete Xiangling y ningún Bennett... o al revés.</span>
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- 50/50 -->
+        <section id="cincuenta" class="section" aria-labelledby="fifty-title">
+            <div class="container">
+                <header class="section-header">
+                    <span class="section-header__eyebrow"><span lang="en">The moment of truth</span><span lang="es">El momento de la verdad</span></span>
+                    <h2 id="fifty-title" class="section-header__title"><span lang="en">Winning or losing the 50/50</span><span lang="es">Ganar o perder el 50/50</span></h2>
+                </header>
+                <div class="grid grid--2">
+                    <article class="card">
+                        <h3 class="card__title"><span lang="en">What does it mean?</span><span lang="es">¿Qué significa?</span></h3>
+                        <p class="card__text">
+                            <span lang="en">On the character banner, when your 5★ shows up there's a 50% chance it's the featured character. If it is, you “won the 50/50”. If you get someone else from the standard banner (yes, Qiqi, we're looking at you), you “lost it”.</span>
+                            <span lang="es">En el banner de personaje, cuando sale tu 5★ hay un 50 % de probabilidad de que sea el personaje promocional. Si lo es, «ganaste el 50/50». Si sale otro del banner permanente (sí, Qiqi, te estamos viendo), «lo perdiste».</span>
+                        </p>
+                    </article>
+                    <article class="card">
+                        <h3 class="card__title"><span lang="en">How does the guarantee work?</span><span lang="es">¿Cómo funciona el garantizado?</span></h3>
+                        <p class="card__text">
+                            <span lang="en">If you lose the 50/50, your next 5★ on the character banner will be the featured one, no matter what. That “guarantee” stays saved even if the banner changes, until you use it.</span>
+                            <span lang="es">Si pierdes el 50/50, tu siguiente 5★ en el banner de personaje será el promocional, sí o sí. Ese «garantizado» se queda guardado aunque cambie el banner, hasta que lo uses.</span>
+                        </p>
+                    </article>
+                </div>
+                <div class="callout callout--note">
+                    <strong class="callout__title"><span lang="en">What happens to pity when the banner changes?</span><span lang="es">¿Qué ocurre con el pity al cambiar de banner?</span></strong>
+                    <p>
+                        <span lang="en">The counter and the guarantee <strong>don't reset</strong> when a banner ends: they carry over to the next banner of the same type. The two character banners that run at the same time share a counter. The weapon banner, the standard banner and the Chronicled Wish each have their own.</span>
+                        <span lang="es">El contador y el garantizado <strong>no se reinician</strong> cuando termina un banner: pasan al siguiente banner del mismo tipo. Los dos banners de personaje que salen al mismo tiempo comparten contador. El banner de armas, el permanente y el Deseo cronológico tienen cada uno su propio contador.</span>
+                    </p>
+                </div>
+                <div class="callout callout--tip">
+                    <strong class="callout__title"><span lang="en">A break for those who keep losing</span><span lang="es">Un respiro para los que pierden seguido</span></strong>
+                    <p>
+                        <span lang="en">Since version 5.0 there's a mechanic (<em>Capturing Radiance</em>) that reduces streaks of lost 50/50s in a row. It doesn't change the limit or guarantee you'll win the next one.</span>
+                        <span lang="es">Desde la versión 5.0 existe un mecanismo (en inglés, <em>Capturing Radiance</em>) que reduce las rachas de 50/50 perdidos seguidos. No cambia el límite ni garantiza que ganarás el siguiente.</span>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <nav id="section-pagination" class="section-pagination container" aria-label="Sections" data-aria-label-en="Section navigation" data-aria-label-es="Navegación entre secciones"></nav>
+    </main>
+
+    <footer id="site-footer" class="site-footer"></footer>
+
+    <script src="../data/site-content.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/pity-calculator.js"></script>
+</body>
+</html>
